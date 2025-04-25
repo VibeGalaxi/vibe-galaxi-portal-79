@@ -16,6 +16,32 @@ import ContactSection from "../components/ContactSection";
 import VirtualTryOn from "../components/VirtualTryOn";
 import ExclusiveDrops from "../components/ExclusiveDrops";
 import VibeBadges from "../components/VibeBadges";
+import { ReactNode } from "react";
+
+// Define the missing feature lists for product highlights
+const dripFeatures = (
+  <ul className="list-disc ml-8 text-white/90">
+    <li>Fiecare tricou include un cod QR pentru content exclusiv</li>
+    <li>Materiale premium și design absurd de comod</li>
+    <li>Meme-uri actualizate lunar prin NFC</li>
+  </ul>
+);
+
+const caffeiniaFeatures = (
+  <ul className="list-disc ml-8 text-white/90">
+    <li>Cănile schimbă culoarea când pui lichid fierbinte</li>
+    <li>Scanează codul AR pentru ritualul cafelei de dimineață</li>
+    <li>Materiale ecologice, vibe cosmică</li>
+  </ul>
+);
+
+const nebulaFeatures = (
+  <ul className="list-disc ml-8 text-white/90">
+    <li>Strălucește în întuneric cu constelatii unice</li>
+    <li>Tag NFC cu mesaj personalizat de la AI</li>
+    <li>Buzunar ascuns pentru artefacte cosmice</li>
+  </ul>
+);
 
 const Index = () => {
   return (
