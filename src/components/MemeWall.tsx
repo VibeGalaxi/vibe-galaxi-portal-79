@@ -10,7 +10,7 @@ const MemeWall = () => (
   <section id="memewall" className="py-20 bg-gradient-to-tr from-[#1A1F2C] to-[#D946EF]/10 px-4">
     <div className="max-w-4xl mx-auto text-center mb-7">
       <h2 className="font-orbitron text-3xl md:text-5xl text-white font-bold mb-2 drop-shadow-xl">Meme Wall</h2>
-      <p className="text-white/80 mb-4">Cel mai viral perete cu meme-uri și artefacte create de comunitate.</p>
+      <p className="text-white/80 mb-4">The most viral wall of memes and artifacts created by our community.</p>
     </div>
     <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-4xl mx-auto animate-fade-in">
       {memes.map((m) => (
@@ -21,7 +21,7 @@ const MemeWall = () => (
       ))}
     </div>
     <div className="flex justify-center mt-7">
-      <button className="px-6 py-2 rounded-lg bg-gradient-to-br from-[#1EAEDB] to-[#9b87f5] font-semibold text-white hover:scale-105 shadow animate-pulse-neon">Încarcă și tu un meme!</button>
+      <button className="px-6 py-2 rounded-lg bg-gradient-to-br from-[#1EAEDB] to-[#9b87f5] font-semibold text-white hover:scale-105 shadow animate-pulse-neon">Upload your meme!</button>
     </div>
   </section>
 );

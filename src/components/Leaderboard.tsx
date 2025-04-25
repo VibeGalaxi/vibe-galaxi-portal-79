@@ -14,7 +14,7 @@ const Leaderboard = () => (
         <Users size={32} className="text-[#D946EF]" />
         Leaderboard – Top Vibonauts
       </h2>
-      <p className="text-white/80 font-montserrat mb-2">Top users primesc badg-uri exclusive, drops secrete și roluri speciale.</p>
+      <p className="text-white/80 font-montserrat mb-2">Top users receive exclusive badges, secret drops and special roles.</p>
     </div>
     <ul className="flex flex-col gap-4 items-center">
       {leaders.map((user, idx) => (

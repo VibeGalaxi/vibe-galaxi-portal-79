@@ -4,16 +4,16 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 
 const questions = [
   {
-    q: "Este merch-ul autentic din VibeGalaxi?",
-    a: "Absolut! Fiecare articol e un artefact colecționabil, cu cod NFC și AR meme inclus."
+    q: "Is the merch authentic from VibeGalaxi?",
+    a: "Absolutely! Each item is a collectible artifact, with NFC code and AR meme included."
   },
   {
-    q: "Cum primesc profeția AI?",
-    a: "Scanează NFC-ul și VibeOracle AI îți va genera un mesaj personalizat."
+    q: "How do I receive the AI prophecy?",
+    a: "Scan the NFC tag and VibeOracle AI will generate a personalized message for you."
   },
   {
-    q: "Pot participa la meme contests?",
-    a: "Sigur! Trimite meme-ul tău pe Meme Wall și poți câștiga titluri, badge-uri sau NFT-uri."
+    q: "Can I participate in meme contests?",
+    a: "Sure! Submit your meme on the Meme Wall and you could win titles, badges or NFTs."
   }
 ];
 
@@ -24,7 +24,7 @@ const FaqSection = () => {
     <section id="faq" className="bg-[#1A1F2C]/90 py-16 px-4">
       <div className="max-w-2xl mx-auto text-center mb-7">
         <h2 className="font-orbitron text-3xl md:text-5xl text-white font-bold mb-2 drop-shadow-xl">FAQ</h2>
-        <p className="text-white/80 mb-2">Cele mai populare întrebări din universul VibeGalaxi:</p>
+        <p className="text-white/80 mb-2">The most popular questions from the VibeGalaxi universe:</p>
       </div>
       <ul className="max-w-2xl mx-auto flex flex-col gap-4">
         {questions.map((item, idx) => (

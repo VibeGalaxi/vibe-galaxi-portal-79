@@ -11,7 +11,7 @@ const StorySection = () => (
         Welcome to VibeGalaxi – A Civilization Built on Memes, Style & Cosmic Energy.
       </h2>
       <p className="text-white/90 font-montserrat text-lg md:text-xl mb-10">
-        In a distant dimension, memes are the currency, drip is the law, and every Vibonaut (that’s you) is part of an ever-expanding story. Your merch? Artifacts from this universe.
+        In a distant dimension, memes are the currency, drip is the law, and every Vibonaut (that's you) is part of an ever-expanding story. Your merch? Artifacts from this universe.
       </p>
     </div>
     <PlanetMap />

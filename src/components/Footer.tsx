@@ -1,26 +1,27 @@
+
 import { Facebook, Instagram, Twitter, Youtube, Heart, Mail, ChevronRight, Star, Rocket } from "lucide-react";
 
 const footerLinks = [
   {
-    title: "Explorează",
+    title: "Explore",
     links: [
-      { label: "Colecții", href: "#" },
+      { label: "Collections", href: "#" },
       { label: "Exclusive Drops", href: "#drops" },
       { label: "Vibe Badges", href: "#badges" },
       { label: "VibeOracle™", href: "#oracle" },
     ],
   },
   {
-    title: "Comunitate",
+    title: "Community",
     links: [
       { label: "Leaderboard", href: "#leaderboard" },
       { label: "Meme Wall", href: "#memewall" },
-      { label: "Testimoniale", href: "#testimoniale" },
+      { label: "Testimonials", href: "#testimoniale" },
       { label: "Roadmap", href: "#roadmap" },
     ],
   },
   {
-    title: "Suport",
+    title: "Support",
     links: [
       { label: "FAQ", href: "#faq" },
       { label: "Contact", href: "#contact" },
@@ -82,11 +83,11 @@ const Footer = () => (
           </div>
           
           <div className="glass-morphism p-5 rounded-xl max-w-md mb-8">
-            <p className="text-white/90 text-sm mb-4">Abonează-te la newsletter pentru a primi ultimele noutăți și acces exclusiv la dropuri limitate.</p>
+            <p className="text-white/90 text-sm mb-4">Subscribe to our newsletter to receive the latest news and exclusive access to limited drops.</p>
             <div className="flex">
               <input 
                 type="email" 
-                placeholder="Email-ul tău cosmic" 
+                placeholder="Your cosmic email" 
                 className="bg-white/10 border border-white/10 rounded-l-lg px-4 py-2 flex-1 focus:outline-none focus:border-neon-pink/50"
               />
               <button className="bg-gradient-to-r from-neon-pink to-neon-blue px-4 rounded-r-lg text-white">
@@ -127,7 +128,7 @@ const Footer = () => (
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <h3 className="font-orbitron text-xl md:text-2xl font-bold mb-2">Earth is Temporary. VibeGalaxi is Forever.</h3>
-              <p className="text-white/70">Lansare VibeOracle AI portal 15.06.2025</p>
+              <p className="text-white/70">VibeOracle AI portal launch 15.06.2025</p>
             </div>
             <a 
               href="#drops" 

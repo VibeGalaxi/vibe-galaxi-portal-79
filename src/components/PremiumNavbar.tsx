@@ -3,10 +3,10 @@ import { Rocket, User, ShoppingBag, Menu, X, Star, ArrowUpRight } from "lucide-r
 import { useEffect, useState } from "react";
 
 const links = [
-  { label: "Acasă", href: "#", highlight: false },
-  { label: "Colecții", href: "#category-slider", highlight: false },
-  { label: "Dropuri", href: "#drops", highlight: true },
-  { label: "Comunitate", href: "#comunitate", highlight: false },
+  { label: "Home", href: "#", highlight: false },
+  { label: "Collections", href: "#category-slider", highlight: false },
+  { label: "Drops", href: "#drops", highlight: true },
+  { label: "Community", href: "#comunitate", highlight: false },
   { label: "FAQ", href: "#faq", highlight: false },
   { label: "Contact", href: "#contact", highlight: false },
 ];
@@ -102,7 +102,7 @@ const PremiumNavbar = () => {
               href="#join" 
               className="px-5 py-2 rounded-lg bg-gradient-to-r from-neon-pink to-neon-blue text-white font-medium hover:shadow-lg hover:shadow-neon-pink/20 transition-all duration-300 flex items-center gap-2"
             >
-              <span>Devino Vibonaut</span>
+              <span>Become a Vibonaut</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
@@ -150,7 +150,7 @@ const PremiumNavbar = () => {
               onClick={toggleMobileMenu}
             >
               <ShoppingBag className="w-5 h-5 text-neon-blue" />
-              <span>Vizitează magazinul</span>
+              <span>Visit the store</span>
             </a>
             
             <a 
@@ -159,7 +159,7 @@ const PremiumNavbar = () => {
               onClick={toggleMobileMenu}
             >
               <User className="w-5 h-5" />
-              <span>Devino Vibonaut</span>
+              <span>Become a Vibonaut</span>
             </a>
           </div>
           

@@ -5,19 +5,19 @@ import { useState } from "react";
 const testimonials = [
   {
     name: "Radu P.",
-    text: "N-am mai simțit atâta hype de la lansarea primului meme coin. Hoodie-ul chiar mi-a vorbit AR!",
+    text: "I haven't felt this much hype since the first meme coin launch. The hoodie actually talked to me in AR!",
     avatar: "/placeholder.svg",
     rating: 5
   },
   {
-    name: "Cătălina MemeQueen",
-    text: "Când am scanat NFC-ul a apărut o animație cosmică și mi-a dat badge! Must-have pentru colecționari.",
+    name: "Catalina MemeQueen",
+    text: "When I scanned the NFC, a cosmic animation appeared and gave me a badge! Must-have for collectors.",
     avatar: "/placeholder.svg",
     rating: 5
   },
   {
     name: "Dj Nebulações",
-    text: "Nu e doar merch, e o stare. Vibe-ul se simte și pe TikTok! Recomand!",
+    text: "It's not just merch, it's a state of mind. The vibe is felt on TikTok too! Recommended!",
     avatar: "/placeholder.svg",
     rating: 4
   },
@@ -30,7 +30,7 @@ export default function TestimonialsCarousel() {
   return (
     <section id="testimoniale" className="w-full py-16 bg-gradient-to-br from-[#1A1F2C] to-[#1EAEDB]/10 px-4">
       <div className="max-w-2xl mx-auto text-center">
-        <h2 className="font-orbitron text-3xl md:text-5xl text-white font-bold mb-6 drop-shadow-xl">Testimoniale Reale</h2>
+        <h2 className="font-orbitron text-3xl md:text-5xl text-white font-bold mb-6 drop-shadow-xl">Real Testimonials</h2>
         <div className="relative flex flex-col items-center">
           <div className="absolute left-0 top-1/2 -translate-y-1/2">
             <button

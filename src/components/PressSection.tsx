@@ -10,7 +10,7 @@ const PressSection = () => (
   <section id="press" className="py-16 bg-gradient-to-tr from-[#D946EF]/20 to-[#1A1F2C] px-4">
     <div className="max-w-xl mx-auto text-center mb-8">
       <h2 className="font-orbitron text-3xl md:text-5xl text-white font-bold mb-2 drop-shadow-xl">Featured In</h2>
-      <p className="text-white/80 font-montserrat">VibeGalaxi a apărut în media virală & web3 press:</p>
+      <p className="text-white/80 font-montserrat">VibeGalaxi has appeared in viral media & web3 press:</p>
     </div>
     <div className="flex flex-wrap justify-center items-center gap-7 max-w-3xl mx-auto">
       {brands.map((b) => (

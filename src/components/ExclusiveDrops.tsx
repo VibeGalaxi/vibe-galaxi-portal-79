@@ -5,7 +5,7 @@ const drops = [
   {
     date: "May 1",
     name: "VibeHolo Collection",
-    desc: "Holograme purtabile, merch edition",
+    desc: "Wearable holograms, merch edition",
     tag: "Upcoming"
   },
   {
@@ -27,7 +27,7 @@ const ExclusiveDrops = () => (
     <div className="max-w-6xl mx-auto">
       <div className="text-center mb-16">
         <h2 className="font-orbitron text-3xl md:text-5xl text-white font-bold mb-4">Exclusive Drops</h2>
-        <p className="text-white/80 text-lg">Următoarele colecții limitate care vor face istorie în VibeGalaxi</p>
+        <p className="text-white/80 text-lg">The next limited collections that will make history in VibeGalaxi</p>
       </div>
       <div className="grid md:grid-cols-3 gap-8">
         {drops.map((drop) => (
