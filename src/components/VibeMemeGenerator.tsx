@@ -11,7 +11,7 @@ const VibeMemeGenerator = () => {
     setGenerating(true);
     // Simulate generation
     setTimeout(() => {
-      setMemeUrl("/placeholder.svg");
+      setMemeUrl("/photo-1579546929518-9e396f3cc809");
       setGenerating(false);
     }, 2000);
   };

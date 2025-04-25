@@ -29,7 +29,7 @@ const CosmicCountdown = () => {
 
   return (
     <section className="relative py-24 px-4 bg-[#1A1F2C] overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/photo-1462331940025-496dfbfc7564')] bg-cover bg-center opacity-20" />
+      <div className="absolute inset-0 bg-[url('/photo-1506318137071-a8e063b4bec0')] bg-cover bg-center opacity-20" />
       
       <div className="max-w-4xl mx-auto relative z-10 text-center">
         <h2 className="text-4xl md:text-6xl font-orbitron font-bold mb-8 text-white animate-pulse">

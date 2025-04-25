@@ -7,14 +7,14 @@ const stories = [
     id: 1,
     title: "My Vibe Journey",
     author: "CosmicKing",
-    thumbnail: "/photo-1487058792275-0ad4aaf24ca7",
+    thumbnail: "/photo-1614729561034-7a9d0fd6757f",
     views: "12.4K"
   },
   {
     id: 2,
     title: "How I Found My Drip",
     author: "VibeQueen",
-    thumbnail: "/photo-1500673922987-e212871fec22",
+    thumbnail: "/photo-1601972599720-36938d4ecd31",
     views: "8.2K"
   }
 ];

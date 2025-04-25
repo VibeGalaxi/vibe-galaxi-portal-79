@@ -1,9 +1,9 @@
 
 const memes = [
-  { url: "/photo-1519389950473-47ba0277781c", caption: "Meme Prophecy #1" },
-  { url: "/photo-1488590528505-98d2b5aba04b", caption: "Human Not Found!" },
-  { url: "/photo-1615729947596-a598e5de0ab3", caption: "Drip Portal :D" },
-  { url: "/photo-1582562124811-c09040d0a901", caption: "Intergalactic Cat" },
+  { url: "/photo-1573246123716-6b1782bfc499", caption: "Meme Prophecy #1" },
+  { url: "/photo-1507457379470-08b800bebc67", caption: "Human Not Found!" },
+  { url: "/photo-1618331833071-ce81bd50d300", caption: "Drip Portal :D" },
+  { url: "/photo-1543852786-1cf6624b9987", caption: "Intergalactic Cat" },
 ];
 
 const MemeWall = () => (

@@ -7,14 +7,14 @@ const designs = [
     id: 1,
     name: "Nebula Dreams",
     description: "Glow-in-the-dark constellation pattern",
-    image: "/photo-1487058792275-0ad4aaf24ca7",
+    image: "/photo-1534951009808-766178b47a4f",
     votes: 1234
   },
   {
     id: 2,
     name: "Cyber Drip",
     description: "RGB reactive thread technology",
-    image: "/photo-1500673922987-e212871fec22",
+    image: "/photo-1518770660439-4636190af475",
     votes: 2345
   }
 ];

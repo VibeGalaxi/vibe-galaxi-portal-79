@@ -2,21 +2,21 @@
 const posts = [
   {
     user: "VibeLord",
-    avatar: "/placeholder.svg",
+    avatar: "/photo-1614289371518-722f2615943d",
     text: "Found a new cosmic vibe spot 🔥",
-    img: "/photo-1501854140801-50d01698950b"
+    img: "/photo-1541185933-ef5d8ed016c2"
   },
   {
     user: "Dripster",
-    avatar: "/placeholder.svg",
+    avatar: "/photo-1494790108377-be9c29b29330",
     text: "Badge drop at the IRL meetup 😎",
-    img: "/photo-1721322800607-8c38375eef04"
+    img: "/photo-1534528741775-53994a69daeb"
   },
   {
     user: "Memeo",
-    avatar: "/placeholder.svg",
+    avatar: "/photo-1539571696357-5a69c17a67c6",
     text: "Got a random prophecy on my NFC hoodie. LOL!",
-    img: "/photo-1487958449943-2429e8be8625"
+    img: "/photo-1507499739999-097706ad8914"
   },
 ];
 

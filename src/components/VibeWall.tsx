@@ -5,21 +5,21 @@ const posts = [
   {
     id: 1,
     username: "CosmicDrip",
-    image: "/photo-1487058792275-0ad4aaf24ca7",
+    image: "/photo-1559406041-c7d2b2e98690",
     caption: "Just unlocked the Nebula Badge! 🌌",
     likes: 423
   },
   {
     id: 2,
     username: "MemeQueen",
-    image: "/photo-1500673922987-e212871fec22",
+    image: "/photo-1569317002804-ab77bcf1bce4",
     caption: "This meme prophecy hit different fr fr",
     likes: 891
   },
   {
     id: 3,
     username: "VibeKing",
-    image: "/photo-1526374965328-7f61d4dc18c5",
+    image: "/photo-1550745165-9bc0b252726f",
     caption: "My portal hoodie just arrived! 🔮",
     likes: 567
   }
