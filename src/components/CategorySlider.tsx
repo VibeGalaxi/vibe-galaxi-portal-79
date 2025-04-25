@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -351,7 +352,7 @@ const CategorySlider = () => {
           defaultValue="t-shirts" 
           value={activeTab}
           onValueChange={(value) => setActiveTab(value)}
-          className="w-full max-w-4xl mx-auto mb-16"
+          className="w-full max-w-6xl mx-auto mb-20"
         >
           <div className="relative">
             <div 
@@ -359,15 +360,15 @@ const CategorySlider = () => {
               style={{ transform: 'translateY(20%)' }}
             />
             <TabsList 
-              className={`w-full glass-morphism backdrop-blur-2xl p-2 rounded-xl grid grid-cols-3 md:grid-cols-5 
-                          transition-all duration-500 gap-2 bg-[#1c1c1c]/50 border border-white/5
+              className={`w-full glass-morphism backdrop-blur-2xl p-4 rounded-xl grid grid-cols-3 md:grid-cols-5 
+                          transition-all duration-500 gap-3 bg-[#1c1c1c]/50 border border-white/5
                           ${isVisible ? 'opacity-100' : 'opacity-0 transform -translate-y-4'}`}
             >
               {categories.map((category, index) => (
                 <TabsTrigger 
                   key={category.id}
                   value={category.id}
-                  className={`rounded-lg text-lg py-4 px-4 transition-all duration-500 
+                  className={`rounded-lg text-lg py-5 px-4 transition-all duration-500 
                             flex items-center justify-center gap-3 group relative overflow-hidden
                             ${activeTab === category.id 
                               ? `bg-gradient-to-r ${category.color} text-[#0d0620] font-bold shadow-lg` 
