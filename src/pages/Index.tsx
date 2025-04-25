@@ -17,6 +17,7 @@ import ContactSection from "../components/ContactSection";
 import VirtualTryOn from "../components/VirtualTryOn";
 import ExclusiveDrops from "../components/ExclusiveDrops";
 import VibeBadges from "../components/VibeBadges";
+import VibeMemeGenerator from "../components/VibeMemeGenerator";
 import { ReactNode } from "react";
 
 // Define the missing feature lists for product highlights
@@ -51,6 +52,7 @@ const Index = () => {
       <HeroSection />
       <CategorySlider />
       <Leaderboard />
+      <VibeMemeGenerator />
       <StorySection />
       <TestimonialsCarousel />
       <VirtualTryOn />
