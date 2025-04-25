@@ -4,14 +4,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { TShirt, Mug, Star, IdCard } from "lucide-react";
+import { Shirt, Coffee, Star, BadgeCheck } from "lucide-react";
 
 // Define the category products
 const categories = [
   {
     id: "t-shirts",
     name: "T-Shirts",
-    icon: TShirt,
+    icon: Shirt,
     color: "from-[#ff00ff] to-[#cc00ff]",
     products: [
       {
@@ -43,7 +43,7 @@ const categories = [
   {
     id: "mugs",
     name: "Mugs",
-    icon: Mug,
+    icon: Coffee,
     color: "from-[#00ffff] to-[#00ccff]",
     products: [
       {
@@ -107,7 +107,7 @@ const categories = [
   {
     id: "accessories",
     name: "Accessories",
-    icon: IdCard,
+    icon: BadgeCheck,
     color: "from-[#00ccff] to-[#1EAEDB]",
     products: [
       {
@@ -286,8 +286,8 @@ const CategorySlider = () => {
         </Tabs>
       </div>
       
-      {/* Add CSS animation for twinkling stars */}
-      <style jsx>{`
+      <style>
+        {`
         @keyframes twinkle {
           0%, 100% { opacity: 0.4; }
           50% { opacity: 0.7; }
@@ -310,7 +310,8 @@ const CategorySlider = () => {
         .hover-glitch:hover {
           animation: glitch 0.5s ease-in-out;
         }
-      `}</style>
+      `}
+      </style>
     </section>
   );
 };
