@@ -3,7 +3,6 @@ import HeroSection from "../components/HeroSection";
 import StorySection from "../components/StorySection";
 import ProductHighlight from "../components/ProductHighlight";
 import Footer from "../components/Footer";
-
 import PremiumNavbar from "../components/PremiumNavbar";
 import Leaderboard from "../components/Leaderboard";
 import TestimonialsCarousel from "../components/TestimonialsCarousel";
@@ -14,69 +13,36 @@ import PressSection from "../components/PressSection";
 import NewsletterSignup from "../components/NewsletterSignup";
 import CommunityWall from "../components/CommunityWall";
 import ContactSection from "../components/ContactSection";
-
-// Placeholder images and features lists
-const dripFeatures = (
-  <ul className="list-disc ml-8 text-white/90">
-    <li>NFC tag unlocks meme lore</li>
-    <li>Limited "Time-Loop Drops" (3 hours only)</li>
-    <li>Best-sellers: "Don’t Kill My Vibe – I’m Intergalactic",<br />"Error 404: Human Not Found"</li>
-  </ul>
-);
-const caffeiniaFeatures = (
-  <ul className="list-disc ml-8 text-white/90">
-    <li>Color-changing mugs (hot/cold)</li>
-    <li>AR caffeine spirit animation</li>
-    <li>"Prophecy Mug" reveals hidden message</li>
-  </ul>
-);
-const nebulaFeatures = (
-  <ul className="list-disc ml-8 text-white/90">
-    <li>NFC tag – hidden memes unlocked</li>
-    <li>Holographic, AR-activated unboxing</li>
-    <li>Glow-in-the-dark constellations</li>
-  </ul>
-);
+import VirtualTryOn from "../components/VirtualTryOn";
+import ExclusiveDrops from "../components/ExclusiveDrops";
+import VibeBadges from "../components/VibeBadges";
 
 const Index = () => {
   return (
     <main className="bg-[#1A1F2C] min-h-screen font-montserrat">
       <PremiumNavbar />
       <HeroSection />
-
-      {/* Nova secțiune: Leaderboard */}
       <Leaderboard />
-
-      {/* 2. VibeGalaxi Story */}
       <StorySection />
-
-      {/* Testimonials Carousel */}
       <TestimonialsCarousel />
-
-      {/* Meme Wall */}
+      <VirtualTryOn />
       <MemeWall />
-
-      {/* Product Highlights + restul */}
+      <ExclusiveDrops />
+      <VibeBadges />
       <ProductHighlight
         headline="The AI That Predicts Your Vibe."
         subhead="The VibeOracle™ is an artificial intelligence that scans the universe for the freshest memes, trends, and prophecies. Every product comes with a unique AI-generated message."
         features={
           <ul className="list-disc ml-8 text-white/90">
-            <li>Demo: Tap your hoodie’s NFC tag → Hear your personalized vibe prophecy.</li>
+            <li>Demo: Tap your hoodie's NFC tag → Hear your personalized vibe prophecy.</li>
           </ul>
         }
         imageUrl="/photo-1487058792275-0ad4aaf24ca7"
         bgFrom="#21063E"
         bgTo="#D946EF"
       />
-
-      {/* Timeline Roadmap */}
       <TimelineRoadmap />
-
-      {/* Press Featured */}
       <PressSection />
-
-      {/* 4. VibeQuests */}
       <ProductHighlight
         headline="Complete Missions. Earn Badges. Level Up."
         subhead="VibeQuests™: Meme of the Month, Offline Vibe Spotting, Lore Unlocker, and more. Win exclusive merch, titles, and NFT badges."
@@ -92,8 +58,6 @@ const Index = () => {
         bgTo="#8B5CF6"
         reverse
       />
-
-      {/* 5. Planet Drip */}
       <ProductHighlight
         headline="Wear the Meme. Live the Lore."
         subhead="Planet Drip – meme T-shirts with a soul. Each tee unlocks exclusive drip and meme lore."
@@ -102,8 +66,6 @@ const Index = () => {
         bgFrom="#8B5CF6"
         bgTo="#F97316"
       />
-
-      {/* 6. Caffeinia */}
       <ProductHighlight
         headline="Your Morning Brew Is a Cosmic Ritual."
         subhead="From color-changing mugs to AR coffee spirits, Caffeinia powers your days in VibeGalaxi."
@@ -113,8 +75,6 @@ const Index = () => {
         bgTo="#D946EF"
         reverse
       />
-
-      {/* 7. Nebulahood */}
       <ProductHighlight
         headline="Your Hoodie Is a Portal."
         subhead="Nebulahood™ hoodies: AR unboxing, hidden memes, and glow-in-the-dark constellations."
@@ -123,20 +83,10 @@ const Index = () => {
         bgFrom="#D946EF"
         bgTo="#9b87f5"
       />
-
-      {/* FAQ */}
       <FaqSection />
-
-      {/* Newsletter Signup */}
       <NewsletterSignup />
-
-      {/* Community Wall */}
       <CommunityWall />
-
-      {/* Contact */}
       <ContactSection />
-
-      {/* Footer */}
       <Footer />
     </main>
   );
