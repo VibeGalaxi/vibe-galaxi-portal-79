@@ -1,14 +1,12 @@
-
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Shirt, Coffee, Star, BadgeCheck } from "lucide-react";
+import { Shirt, Coffee, Star, BadgeCheck, Asterisk, Flame } from "lucide-react";
 import { HoverCard, HoverCardTrigger, HoverCardContent } from "@/components/ui/hover-card";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-// Define the category products
 const categories = [
   {
     id: "t-shirts",
@@ -20,7 +18,7 @@ const categories = [
         id: 1,
         name: "Don't Kill My Vibe",
         description: "Intergalactic best seller with NFC meme lore",
-        image: "/photo-1470813740244-df37b8c1edcb",
+        image: "https://pythago.ai/bruh/assets/llama1.png",
         badge: "NFC-enabled",
         limitedEdition: true
       },
@@ -28,7 +26,7 @@ const categories = [
         id: 2,
         name: "Error 404",
         description: "Glow-in-the-dark coding humor for the metaverse",
-        image: "/photo-1500673922987-e212871fec22",
+        image: "https://pythago.ai/bruh/assets/monkeyt2.png",
         badge: "Glow-in-dark",
         limitedEdition: false
       },
@@ -36,8 +34,72 @@ const categories = [
         id: 3,
         name: "VibeCheck™",
         description: "QR code unlocks exclusive digital art gallery",
-        image: "/photo-1526374965328-7f61d4dc18c5",
+        image: "https://pythago.ai/bruh/assets/monkeyt4.png",
         badge: "QR-enabled",
+        limitedEdition: true
+      }
+    ]
+  },
+  {
+    id: "shorts",
+    name: "Shorts",
+    icon: Flame,
+    color: "from-[#F97316] to-[#ff8800]",
+    products: [
+      {
+        id: 1,
+        name: "Cosmic Shorts",
+        description: "Ultimate comfort with cosmic energy patterns",
+        image: "https://pythago.ai/bruh/assets/lama4shorts.png",
+        badge: "Ultra-comfort",
+        limitedEdition: true
+      },
+      {
+        id: 2,
+        name: "Digital Flow",
+        description: "Breathable fabric with embedded tech patterns",
+        image: "/photo-1500673922987-e212871fec22",
+        badge: "Tech-fabric",
+        limitedEdition: false
+      },
+      {
+        id: 3,
+        name: "Vibrant Flex",
+        description: "Stretchy athletic shorts with holographic finish",
+        image: "/photo-1526374965328-7f61d4dc18c5",
+        badge: "Athletic-fit",
+        limitedEdition: true
+      }
+    ]
+  },
+  {
+    id: "hoodies",
+    name: "Hoodies",
+    icon: Asterisk,
+    color: "from-[#8B5CF6] to-[#6E59A5]",
+    products: [
+      {
+        id: 1,
+        name: "Nebulahood™ Classic",
+        description: "Glow-in-dark constellation patterns with hidden pockets",
+        image: "https://pythago.ai/bruh/assets/lammahodie2.png",
+        badge: "NFC-enabled",
+        limitedEdition: true
+      },
+      {
+        id: 2,
+        name: "Quantum Windbreaker",
+        description: "Exists in multiple dimensions simultaneously",
+        image: "/photo-1500673922987-e212871fec22",
+        badge: "Weather-proof",
+        limitedEdition: false
+      },
+      {
+        id: 3,
+        name: "Astral Denim",
+        description: "Embroidered with actual star maps and constellations",
+        image: "/photo-1487058792275-0ad4aaf24ca7",
+        badge: "Star-mapped",
         limitedEdition: true
       }
     ]
@@ -71,38 +133,6 @@ const categories = [
         image: "/photo-1470813740244-df37b8c1edcb",
         badge: "Eco-friendly",
         limitedEdition: false
-      }
-    ]
-  },
-  {
-    id: "jackets",
-    name: "Jackets",
-    icon: Star,
-    color: "from-[#cc00ff] to-[#9b87f5]",
-    products: [
-      {
-        id: 1,
-        name: "Nebulahood™ Classic",
-        description: "Glow-in-dark constellation patterns with hidden pockets",
-        image: "/photo-1526374965328-7f61d4dc18c5",
-        badge: "NFC-enabled",
-        limitedEdition: true
-      },
-      {
-        id: 2,
-        name: "Quantum Windbreaker",
-        description: "Exists in multiple dimensions simultaneously",
-        image: "/photo-1500673922987-e212871fec22",
-        badge: "Weather-proof",
-        limitedEdition: false
-      },
-      {
-        id: 3,
-        name: "Astral Denim",
-        description: "Embroidered with actual star maps and constellations",
-        image: "/photo-1487058792275-0ad4aaf24ca7",
-        badge: "Star-mapped",
-        limitedEdition: true
       }
     ]
   },
@@ -199,7 +229,6 @@ const ProductCard = ({ product, categoryColor }: {
               </button>
             </div>
             
-            {/* 3D Tilt Effect */}
             <div 
               className={`absolute inset-0 bg-gradient-to-tr ${categoryColor} opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none`}
               style={{
@@ -209,7 +238,6 @@ const ProductCard = ({ product, categoryColor }: {
             />
           </div>
           
-          {/* Premium touch: Neon border glow effect */}
           <div 
             className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none neon-border`}
             style={{
@@ -240,10 +268,8 @@ const CategorySlider = () => {
   const isMobile = useIsMobile();
   
   useEffect(() => {
-    // Trigger animation when component mounts
     setIsVisible(true);
     
-    // Intersection Observer for scroll animations
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
         setIsVisible(true);
@@ -268,7 +294,6 @@ const CategorySlider = () => {
         backgroundPosition: "center",
       }}
     >
-      {/* Animated cosmic background with particles */}
       <div 
         className="absolute inset-0 z-0"
         style={{
@@ -278,7 +303,6 @@ const CategorySlider = () => {
         }}
       />
       
-      {/* Twinkling stars effect */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {Array(100).fill(0).map((_, i) => (
           <div 
@@ -296,7 +320,6 @@ const CategorySlider = () => {
         ))}
       </div>
       
-      {/* Cosmic nebula overlay */}
       <div 
         className="absolute inset-0 z-0 opacity-20 bg-cover bg-center"
         style={{
@@ -307,7 +330,6 @@ const CategorySlider = () => {
       />
       
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Headline with glitch animation */}
         <div className="text-center mb-16">
           <h2 
             className={`font-orbitron text-center text-5xl md:text-6xl lg:text-7xl font-bold mb-4
@@ -325,7 +347,6 @@ const CategorySlider = () => {
           </p>
         </div>
         
-        {/* Category Tabs */}
         <Tabs 
           defaultValue="t-shirts" 
           value={activeTab}
@@ -338,7 +359,7 @@ const CategorySlider = () => {
               style={{ transform: 'translateY(20%)' }}
             />
             <TabsList 
-              className={`w-full glass-morphism backdrop-blur-2xl p-2 rounded-xl grid grid-cols-2 md:grid-cols-4 
+              className={`w-full glass-morphism backdrop-blur-2xl p-2 rounded-xl grid grid-cols-3 md:grid-cols-5 
                           transition-all duration-500 gap-2 bg-[#1c1c1c]/50 border border-white/5
                           ${isVisible ? 'opacity-100' : 'opacity-0 transform -translate-y-4'}`}
             >
@@ -368,7 +389,6 @@ const CategorySlider = () => {
                   />
                   <span className="relative z-10">{category.name}</span>
                   
-                  {/* Active tab indicator */}
                   {activeTab === category.id && (
                     <div className="absolute bottom-0 left-0 w-full h-1 bg-white/30" />
                   )}
@@ -377,7 +397,6 @@ const CategorySlider = () => {
             </TabsList>
           </div>
           
-          {/* Product Cards */}
           {categories.map((category) => (
             <TabsContent 
               key={category.id}
