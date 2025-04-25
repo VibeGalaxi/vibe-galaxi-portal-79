@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Share2, TikTok } from "lucide-react";
+import { Share2, BookX } from "lucide-react";
 
 const VibeMemeGenerator = () => {
   const [generating, setGenerating] = useState(false);
@@ -58,7 +58,7 @@ const VibeMemeGenerator = () => {
               </>
             ) : (
               <>
-                <TikTok className="animate-pulse" />
+                <BookX className="animate-pulse" />
                 Generate Meme
               </>
             )}
@@ -78,7 +78,7 @@ const VibeMemeGenerator = () => {
                   <Share2 size={20} />
                 </button>
                 <button className="p-2 rounded-lg bg-white/10 backdrop-blur border border-white/20 text-white hover:scale-110 transition-transform">
-                  <TikTok size={20} />
+                  <BookX size={20} />
                 </button>
               </div>
             </div>

@@ -1,5 +1,5 @@
 
-import { TikTok } from "lucide-react";
+import { BookX } from "lucide-react";
 import { useState } from "react";
 
 const CosmicGiveaway = () => {
@@ -33,7 +33,7 @@ const CosmicGiveaway = () => {
         </h2>
         
         <p className="text-white/80 mb-8 text-lg">
-          Win the ultimate VibeMerch bundle! Enter your email and follow us on TikTok for double chances.
+          Win the ultimate VibeMerch bundle! Enter your email and follow us on social media for double chances.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -66,8 +66,8 @@ const CosmicGiveaway = () => {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-xl bg-black text-white hover:scale-105 transition-transform"
         >
-          <TikTok />
-          Follow on TikTok
+          <BookX />
+          Follow Us
         </a>
       </div>
     </section>

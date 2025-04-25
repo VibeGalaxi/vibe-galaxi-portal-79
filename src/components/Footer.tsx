@@ -1,5 +1,4 @@
-
-import { Facebook, Instagram, Twitter, YouTube, Heart, Mail, ChevronRight, Star, Rocket } from "lucide-react";
+import { Facebook, Instagram, Twitter, Youtube, Heart, Mail, ChevronRight, Star, Rocket } from "lucide-react";
 
 const footerLinks = [
   {
@@ -35,7 +34,7 @@ const socialLinks = [
   { icon: Instagram, href: "#" },
   { icon: Twitter, href: "#" },
   { icon: Facebook, href: "#" },
-  { icon: YouTube, href: "#" },
+  { icon: Youtube, href: "#" },
 ];
 
 const Footer = () => (
