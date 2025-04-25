@@ -1,13 +1,107 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import HeroSection from "../components/HeroSection";
+import StorySection from "../components/StorySection";
+import ProductHighlight from "../components/ProductHighlight";
+import Footer from "../components/Footer";
+
+// Placeholder images and features lists
+const dripFeatures = (
+  <ul className="list-disc ml-8 text-white/90">
+    <li>NFC tag unlocks meme lore</li>
+    <li>Limited "Time-Loop Drops" (3 hours only)</li>
+    <li>Best-sellers: "Don’t Kill My Vibe – I’m Intergalactic",<br />"Error 404: Human Not Found"</li>
+  </ul>
+);
+const caffeiniaFeatures = (
+  <ul className="list-disc ml-8 text-white/90">
+    <li>Color-changing mugs (hot/cold)</li>
+    <li>AR caffeine spirit animation</li>
+    <li>"Prophecy Mug" reveals hidden message</li>
+  </ul>
+);
+const nebulaFeatures = (
+  <ul className="list-disc ml-8 text-white/90">
+    <li>NFC tag – hidden memes unlocked</li>
+    <li>Holographic, AR-activated unboxing</li>
+    <li>Glow-in-the-dark constellations</li>
+  </ul>
+);
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="bg-[#1A1F2C] min-h-screen font-montserrat">
+      <HeroSection />
+
+      {/* 2. VibeGalaxi Story */}
+      <StorySection />
+
+      {/* 3. Meet the VibeOracle */}
+      <ProductHighlight
+        headline="The AI That Predicts Your Vibe."
+        subhead="The VibeOracle™ is an artificial intelligence that scans the universe for the freshest memes, trends, and prophecies. Every product comes with a unique AI-generated message."
+        features={
+          <ul className="list-disc ml-8 text-white/90">
+            <li>Demo: Tap your hoodie’s NFC tag → Hear your personalized vibe prophecy.</li>
+          </ul>
+        }
+        imageUrl="/photo-1487058792275-0ad4aaf24ca7"
+        bgFrom="#21063E"
+        bgTo="#D946EF"
+      />
+
+      {/* 4. VibeQuests */}
+      <ProductHighlight
+        headline="Complete Missions. Earn Badges. Level Up."
+        subhead="VibeQuests™: Meme of the Month, Offline Vibe Spotting, Lore Unlocker, and more. Win exclusive merch, titles, and NFT badges."
+        features={
+          <ul className="list-disc ml-8 text-white/90">
+            <li>Meme of the Month (Best VibeMerch meme wins)</li>
+            <li>Offline Vibe Spotting (IRL meetups)</li>
+            <li>Lore Unlocker (AR Easter eggs)</li>
+          </ul>
+        }
+        imageUrl="/photo-1487058792275-0ad4aaf24ca7"
+        bgFrom="#1EAEDB"
+        bgTo="#8B5CF6"
+        reverse
+      />
+
+      {/* 5. Planet Drip */}
+      <ProductHighlight
+        headline="Wear the Meme. Live the Lore."
+        subhead="Planet Drip – meme T-shirts with a soul. Each tee unlocks exclusive drip and meme lore."
+        features={dripFeatures}
+        imageUrl="/photo-1470813740244-df37b8c1edcb"
+        bgFrom="#8B5CF6"
+        bgTo="#F97316"
+      />
+
+      {/* 6. Caffeinia */}
+      <ProductHighlight
+        headline="Your Morning Brew Is a Cosmic Ritual."
+        subhead="From color-changing mugs to AR coffee spirits, Caffeinia powers your days in VibeGalaxi."
+        features={caffeiniaFeatures}
+        imageUrl="/photo-1500673922987-e212871fec22"
+        bgFrom="#1EAEDB"
+        bgTo="#D946EF"
+        reverse
+      />
+
+      {/* 7. Nebulahood */}
+      <ProductHighlight
+        headline="Your Hoodie Is a Portal."
+        subhead="Nebulahood™ hoodies: AR unboxing, hidden memes, and glow-in-the-dark constellations."
+        features={nebulaFeatures}
+        imageUrl="/photo-1526374965328-7f61d4dc18c5"
+        bgFrom="#D946EF"
+        bgTo="#9b87f5"
+      />
+
+      {/* More sections (OrbitCards, VibeDrops, etc.) would be added similarly */}
+
+      {/* Footer */}
+      <Footer />
+    </main>
   );
 };
 
