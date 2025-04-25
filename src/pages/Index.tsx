@@ -4,6 +4,17 @@ import StorySection from "../components/StorySection";
 import ProductHighlight from "../components/ProductHighlight";
 import Footer from "../components/Footer";
 
+import PremiumNavbar from "../components/PremiumNavbar";
+import Leaderboard from "../components/Leaderboard";
+import TestimonialsCarousel from "../components/TestimonialsCarousel";
+import MemeWall from "../components/MemeWall";
+import FaqSection from "../components/FaqSection";
+import TimelineRoadmap from "../components/TimelineRoadmap";
+import PressSection from "../components/PressSection";
+import NewsletterSignup from "../components/NewsletterSignup";
+import CommunityWall from "../components/CommunityWall";
+import ContactSection from "../components/ContactSection";
+
 // Placeholder images and features lists
 const dripFeatures = (
   <ul className="list-disc ml-8 text-white/90">
@@ -30,12 +41,22 @@ const nebulaFeatures = (
 const Index = () => {
   return (
     <main className="bg-[#1A1F2C] min-h-screen font-montserrat">
+      <PremiumNavbar />
       <HeroSection />
+
+      {/* Nova secțiune: Leaderboard */}
+      <Leaderboard />
 
       {/* 2. VibeGalaxi Story */}
       <StorySection />
 
-      {/* 3. Meet the VibeOracle */}
+      {/* Testimonials Carousel */}
+      <TestimonialsCarousel />
+
+      {/* Meme Wall */}
+      <MemeWall />
+
+      {/* Product Highlights + restul */}
       <ProductHighlight
         headline="The AI That Predicts Your Vibe."
         subhead="The VibeOracle™ is an artificial intelligence that scans the universe for the freshest memes, trends, and prophecies. Every product comes with a unique AI-generated message."
@@ -48,6 +69,12 @@ const Index = () => {
         bgFrom="#21063E"
         bgTo="#D946EF"
       />
+
+      {/* Timeline Roadmap */}
+      <TimelineRoadmap />
+
+      {/* Press Featured */}
+      <PressSection />
 
       {/* 4. VibeQuests */}
       <ProductHighlight
@@ -97,7 +124,17 @@ const Index = () => {
         bgTo="#9b87f5"
       />
 
-      {/* More sections (OrbitCards, VibeDrops, etc.) would be added similarly */}
+      {/* FAQ */}
+      <FaqSection />
+
+      {/* Newsletter Signup */}
+      <NewsletterSignup />
+
+      {/* Community Wall */}
+      <CommunityWall />
+
+      {/* Contact */}
+      <ContactSection />
 
       {/* Footer */}
       <Footer />

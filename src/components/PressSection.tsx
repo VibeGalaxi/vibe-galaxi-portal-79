@@ -1,0 +1,26 @@
+
+const brands = [
+  { name: "CryptoTimes", logo: "/placeholder.svg" },
+  { name: "Web3 Now", logo: "/placeholder.svg" },
+  { name: "TrendSetters", logo: "/placeholder.svg" },
+  { name: "Memepedia", logo: "/placeholder.svg" },
+];
+
+const PressSection = () => (
+  <section id="press" className="py-16 bg-gradient-to-tr from-[#D946EF]/20 to-[#1A1F2C] px-4">
+    <div className="max-w-xl mx-auto text-center mb-8">
+      <h2 className="font-orbitron text-3xl md:text-5xl text-white font-bold mb-2 drop-shadow-xl">Featured In</h2>
+      <p className="text-white/80 font-montserrat">VibeGalaxi a apărut în media virală & web3 press:</p>
+    </div>
+    <div className="flex flex-wrap justify-center items-center gap-7 max-w-3xl mx-auto">
+      {brands.map((b) => (
+        <div key={b.name} className="bg-white/10 rounded-xl p-5 backdrop-blur shadow-lg flex flex-col items-center hover:scale-105 transition-all">
+          <img src={b.logo} alt={b.name} className="w-20 h-14 object-contain mb-1" />
+          <span className="text-xs text-white/60 font-montserrat">{b.name}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+);
+
+export default PressSection;
