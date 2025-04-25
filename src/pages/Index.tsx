@@ -18,9 +18,12 @@ import VirtualTryOn from "../components/VirtualTryOn";
 import ExclusiveDrops from "../components/ExclusiveDrops";
 import VibeBadges from "../components/VibeBadges";
 import VibeMemeGenerator from "../components/VibeMemeGenerator";
-import { ReactNode } from "react";
+import VibeWall from "../components/VibeWall";
+import CosmicCountdown from "../components/CosmicCountdown";
+import VibeClashArena from "../components/VibeClashArena";
+import VibeVerseStories from "../components/VibeVerseStories";
+import CosmicGiveaway from "../components/CosmicGiveaway";
 
-// Define the missing feature lists for product highlights
 const dripFeatures = (
   <ul className="list-disc ml-8 text-white/90">
     <li>Fiecare tricou include un cod QR pentru content exclusiv</li>
@@ -53,6 +56,11 @@ const Index = () => {
       <CategorySlider />
       <Leaderboard />
       <VibeMemeGenerator />
+      <VibeWall />
+      <CosmicCountdown />
+      <VibeClashArena />
+      <VibeVerseStories />
+      <CosmicGiveaway />
       <StorySection />
       <TestimonialsCarousel />
       <VirtualTryOn />
