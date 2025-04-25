@@ -1,5 +1,6 @@
 
 import HeroSection from "../components/HeroSection";
+import CategorySlider from "../components/CategorySlider";
 import StorySection from "../components/StorySection";
 import ProductHighlight from "../components/ProductHighlight";
 import Footer from "../components/Footer";
@@ -48,6 +49,7 @@ const Index = () => {
     <main className="bg-[#1A1F2C] min-h-screen font-montserrat">
       <PremiumNavbar />
       <HeroSection />
+      <CategorySlider />
       <Leaderboard />
       <StorySection />
       <TestimonialsCarousel />
