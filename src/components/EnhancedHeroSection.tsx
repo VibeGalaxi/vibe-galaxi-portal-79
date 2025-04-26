@@ -11,10 +11,10 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-// Define the missing calculateParallaxOffset function
-const calculateParallaxOffset = (factor: number) => {
+// Properly defined calculateParallaxOffset function with proper typing
+const calculateParallaxOffset = (scrollPosition: number, factor: number) => {
   return {
-    transform: `translateY(${factor}px)`
+    transform: `translateY(${scrollPosition * factor}px)`
   };
 };
 
@@ -117,7 +117,7 @@ const EnhancedHeroSection = () => {
             background: "radial-gradient(circle at 60% 40%, rgba(217, 70, 239, 0.3) 0%, rgba(30, 174, 219, 0.1) 50%, transparent 70%)",
             top: '20%',
             right: '10%',
-            ...calculateParallaxOffset(-30)
+            transform: `translateY(${scrollY * -0.05}px)`
           }}
         />
         
@@ -127,7 +127,7 @@ const EnhancedHeroSection = () => {
             background: "radial-gradient(circle at 30% 60%, rgba(155, 135, 245, 0.4) 0%, transparent 70%)",
             bottom: '10%',
             left: '5%',
-            ...calculateParallaxOffset(-20)
+            transform: `translateY(${scrollY * -0.03}px)`
           }}
         />
         
