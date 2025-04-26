@@ -177,27 +177,83 @@ export const categories = [
     products: [
       {
         id: 1,
-        name: "Morning Vibe Ritual",
-        description: "Color-changing mug with cosmic AR activation",
-        image: "/photo-1581091226825-a6a2a5aee158",
-        badge: "AR-activated",
-        limitedEdition: false
-      },
-      {
-        id: 2,
-        name: "Caffeinia Portal",
-        description: "Your coffee opens a gateway to VibeGalaxi",
-        image: "/photo-1487058792275-0ad4aaf24ca7",
+        name: "Cosmic Brew Master",
+        description: "Temperature-sensitive constellation design reveals itself",
+        image: "https://pythago.ai/bruh/assets/c1.png",
         badge: "Heat-reactive",
         limitedEdition: true
       },
       {
-        id: 3,
-        name: "Binary Brew",
-        description: "0s and 1s that translate to 'more coffee please'",
-        image: "/photo-1470813740244-df37b8c1edcb",
-        badge: "Eco-friendly",
+        id: 2,
+        name: "Digital Dawn",
+        description: "AR-enabled mug with daily digital art display",
+        image: "https://pythago.ai/bruh/assets/c2.png",
+        badge: "AR-enabled",
         limitedEdition: false
+      },
+      {
+        id: 3,
+        name: "Quantum Coffee",
+        description: "Embedded with quantum computing patterns",
+        image: "https://pythago.ai/bruh/assets/c3.png",
+        badge: "Quantum-tech",
+        limitedEdition: true
+      },
+      {
+        id: 4,
+        name: "Neural Network Nectar",
+        description: "AI-generated patterns that evolve with temperature",
+        image: "https://pythago.ai/bruh/assets/c4.png",
+        badge: "AI-powered",
+        limitedEdition: true
+      },
+      {
+        id: 5,
+        name: "Astral Elixir",
+        description: "Glow-in-the-dark celestial designs",
+        image: "https://pythago.ai/bruh/assets/c5.png",
+        badge: "Glow-in-dark",
+        limitedEdition: false
+      },
+      {
+        id: 6,
+        name: "Cyber Chai",
+        description: "Interactive LED patterns respond to heat",
+        image: "https://pythago.ai/bruh/assets/c6.png",
+        badge: "LED-reactive",
+        limitedEdition: true
+      },
+      {
+        id: 7,
+        name: "Meta Mocha",
+        description: "AR-enabled designs visible in metaverse",
+        image: "https://pythago.ai/bruh/assets/c7.png",
+        badge: "AR-enabled",
+        limitedEdition: true
+      },
+      {
+        id: 8,
+        name: "Digital Doppio",
+        description: "NFC-enabled with exclusive coffee recipes",
+        image: "https://pythago.ai/bruh/assets/c8.png",
+        badge: "NFC-enabled",
+        limitedEdition: false
+      },
+      {
+        id: 9,
+        name: "Neural Nectar",
+        description: "AI-curated design that changes with temperature",
+        image: "https://pythago.ai/bruh/assets/c9.png",
+        badge: "AI-evolving",
+        limitedEdition: true
+      },
+      {
+        id: 10,
+        name: "Astral Americano",
+        description: "Limited edition cosmic design with holographic effect",
+        image: "https://pythago.ai/bruh/assets/c10.png",
+        badge: "Holographic",
+        limitedEdition: true
       }
     ]
   },
