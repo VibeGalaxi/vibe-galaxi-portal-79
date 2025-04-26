@@ -1,3 +1,4 @@
+
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Star, ShieldAlert, Rocket } from "lucide-react";
@@ -9,6 +10,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+
+// Define the missing calculateParallaxOffset function
+const calculateParallaxOffset = (factor: number) => {
+  return {
+    transform: `translateY(${factor}px)`
+  };
+};
 
 const EnhancedHeroSection = () => {
   const [scrollY, setScrollY] = useState(0);
