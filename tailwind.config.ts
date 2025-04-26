@@ -22,9 +22,19 @@ export default {
         "cosmic-900": "var(--cosmic-900)",
         "cosmic-800": "var(--cosmic-800)",
         "cosmic-700": "var(--cosmic-700)",
-        "neon-pink": "var(--neon-pink)",
+        "neon-pink": {
+          DEFAULT: "var(--neon-pink)",
+          50: "rgba(217, 70, 239, 0.5)",
+          20: "rgba(217, 70, 239, 0.2)",
+          5: "rgba(217, 70, 239, 0.05)"
+        },
         "neon-purple": "var(--neon-purple)",
-        "neon-blue": "var(--neon-blue)",
+        "neon-blue": {
+          DEFAULT: "var(--neon-blue)",
+          50: "rgba(30, 174, 219, 0.5)",
+          20: "rgba(30, 174, 219, 0.2)",
+          5: "rgba(30, 174, 219, 0.05)"
+        },
       },
       backgroundImage: {
         'cosmic-gradient': 'linear-gradient(135deg, var(--cosmic-900) 0%, var(--cosmic-800) 100%)',
@@ -81,3 +91,4 @@ export default {
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
