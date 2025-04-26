@@ -1,9 +1,7 @@
-
 import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import PremiumNavbar from "@/components/PremiumNavbar";
 import EnhancedHeroSection from "@/components/EnhancedHeroSection";
-import ProductShowcase3D from "@/components/ProductShowcase3D";
 import ScrollTransition from "@/components/ScrollTransition";
 import StorySection from "@/components/StorySection";
 import CategorySlider from "@/components/CategorySlider";
@@ -21,7 +19,6 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import { Smartphone, ShieldCheck, Zap, Star, PhoneCall, Rocket } from "lucide-react";
 
-// Component to handle reveal animations on scroll
 const RevealOnScroll = ({ children, delay = 0 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -57,7 +54,6 @@ const RevealOnScroll = ({ children, delay = 0 }) => {
 };
 
 const Index = () => {
-  // Initialize reveal elements
   useEffect(() => {
     const handleScroll = () => {
       document.querySelectorAll('.reveal-element').forEach((element) => {
@@ -82,24 +78,15 @@ const Index = () => {
     <div className="bg-cosmic-900 min-h-screen overflow-x-hidden">
       <PremiumNavbar />
       
-      {/* Enhanced Hero Section */}
       <EnhancedHeroSection />
       
-      {/* Story Section */}
       <StorySection />
       
-      {/* Transition */}
       <ScrollTransition colorFrom="rgba(155, 135, 245, 0.6)" colorTo="rgba(217, 70, 239, 0.6)" />
       
-      {/* 3D Product Showcase */}
-      <ProductShowcase3D />
-      
-      {/* Categories */}
       <CategorySlider />
       
-      {/* Featured Vibe Tech - Holographic Cards */}
       <section className="py-24 px-4 bg-gradient-to-br from-cosmic-800 via-cosmic-700 to-cosmic-900 relative overflow-hidden">
-        {/* Background elements */}
         <div className="absolute inset-0 cosmic-grid opacity-10 pointer-events-none" />
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-neon-pink/10 blur-3xl" />
@@ -172,46 +159,32 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Transition */}
       <ScrollTransition colorFrom="rgba(30, 174, 219, 0.6)" colorTo="rgba(217, 70, 239, 0.6)" />
       
-      {/* Countdown */}
       <CosmicCountdown />
       
-      {/* Vibe Clash Arena */}
       <VibeClashArena />
 
-      {/* Community Wall */}
       <CommunityWall />
       
-      {/* Vibe Badges */}
       <VibeBadges />
       
-      {/* Transition */}
       <ScrollTransition colorFrom="rgba(155, 135, 245, 0.6)" colorTo="rgba(30, 174, 219, 0.6)" />
       
-      {/* Roadmap Timeline */}
       <TimelineRoadmap />
       
-      {/* Testimonials */}
       <TestimonialsCarousel />
 
-      {/* Leaderboard */}
       <Leaderboard />
       
-      {/* FAQ */}
       <FaqSection />
       
-      {/* Newsletter Signup */}
       <NewsletterSignup />
       
-      {/* Contact */}
       <ContactSection />
       
-      {/* Footer */}
       <Footer />
       
-      {/* Floating Action Button - Back to top */}
       <div className="fixed bottom-6 right-6 z-50 opacity-0 transition-opacity duration-300" id="back-to-top">
         <button 
           className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-neon-pink to-neon-blue text-white shadow-neon hover:shadow-neon-strong transition-all hover:scale-110"
