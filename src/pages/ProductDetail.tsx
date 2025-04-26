@@ -5,7 +5,6 @@ import PremiumNavbar from "@/components/PremiumNavbar";
 import Footer from "@/components/Footer";
 import { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
-import TeeNomics from "@/components/TeeNomics";
 import Roadmap from "@/components/Roadmap";
 
 const ProductDetail = () => {
@@ -425,7 +424,6 @@ const ProductDetail = () => {
         </div>
       </div>
       
-      <TeeNomics />
       <Roadmap />
       
       <Footer />
