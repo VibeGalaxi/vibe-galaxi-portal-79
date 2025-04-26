@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ShoppingBag, Star, Eye, ChevronLeft, ChevronRight } from "lucide-react";
@@ -146,7 +145,7 @@ const ProductShowcase3D = () => {
   return (
     <div 
       ref={containerRef}
-      className="relative py-32 px-4 md:px-8 bg-gradient-to-br from-cosmic-800 via-cosmic-700 to-neon-blue/20 overflow-hidden"
+      className="relative py-32 px-4 md:px-8 bg-gradient-to-br from-cosmic-800 via-cosmic-700 to-transparent overflow-hidden"
       onMouseMove={handleMouseMove}
     >
       {/* Background design elements */}
