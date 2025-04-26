@@ -21,7 +21,7 @@ const VirtualTryOn = () => (
           </div>
         </div>
         <div className="relative">
-          <img src="/photo-1633960445787-713dfbb23d1d" alt="Virtual Try On Demo" className="rounded-xl shadow-2xl transform hover:scale-105 transition-all" />
+          <img src="https://pythago.ai/bruh/assets/t7.png" alt="Virtual Try On Demo" className="rounded-xl shadow-2xl transform hover:scale-105 transition-all" />
           <div className="absolute -top-4 -right-4 bg-[#D946EF] text-white px-4 py-2 rounded-full text-sm font-bold animate-bounce">
             Live Demo
           </div>

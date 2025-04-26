@@ -7,14 +7,14 @@ const designs = [
     id: 1,
     name: "Nebula Dreams",
     description: "Glow-in-the-dark constellation pattern",
-    image: "/photo-1534951009808-766178b47a4f",
+    image: "https://pythago.ai/bruh/assets/t1.png",
     votes: 1234
   },
   {
     id: 2,
     name: "Cyber Drip",
     description: "RGB reactive thread technology",
-    image: "/photo-1518770660439-4636190af475",
+    image: "https://pythago.ai/bruh/assets/h2.png",
     votes: 2345
   }
 ];

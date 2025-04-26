@@ -7,14 +7,14 @@ const stories = [
     id: 1,
     title: "My Vibe Journey",
     author: "CosmicKing",
-    thumbnail: "/photo-1614729561034-7a9d0fd6757f",
+    thumbnail: "https://pythago.ai/bruh/assets/t3.png",
     views: "12.4K"
   },
   {
     id: 2,
     title: "How I Found My Drip",
     author: "VibeQueen",
-    thumbnail: "/photo-1601972599720-36938d4ecd31",
+    thumbnail: "https://pythago.ai/bruh/assets/h3.png",
     views: "8.2K"
   }
 ];

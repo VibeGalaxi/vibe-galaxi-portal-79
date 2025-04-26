@@ -5,21 +5,21 @@ const posts = [
   {
     id: 1,
     username: "CosmicDrip",
-    image: "/photo-1559406041-c7d2b2e98690",
+    image: "https://pythago.ai/bruh/assets/t2.png",
     caption: "Just unlocked the Nebula Badge! 🌌",
     likes: 423
   },
   {
     id: 2,
     username: "MemeQueen",
-    image: "/photo-1569317002804-ab77bcf1bce4",
+    image: "https://pythago.ai/bruh/assets/h1.png",
     caption: "This meme prophecy hit different fr fr",
     likes: 891
   },
   {
     id: 3,
     username: "VibeKing",
-    image: "/photo-1550745165-9bc0b252726f",
+    image: "https://pythago.ai/bruh/assets/monkeyt4.png",
     caption: "My portal hoodie just arrived! 🔮",
     likes: 567
   }

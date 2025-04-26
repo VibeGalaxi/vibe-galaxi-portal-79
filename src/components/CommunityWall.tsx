@@ -2,21 +2,21 @@
 const posts = [
   {
     user: "VibeLord",
-    avatar: "/photo-1614289371518-722f2615943d",
+    avatar: "https://pythago.ai/bruh/assets/avatar1.png",
     text: "Found a new cosmic vibe spot 🔥",
-    img: "/photo-1541185933-ef5d8ed016c2"
+    img: "https://pythago.ai/bruh/assets/t4.png"
   },
   {
     user: "Dripster",
-    avatar: "/photo-1494790108377-be9c29b29330",
+    avatar: "https://pythago.ai/bruh/assets/avatar2.png",
     text: "Badge drop at the IRL meetup 😎",
-    img: "/photo-1534528741775-53994a69daeb"
+    img: "https://pythago.ai/bruh/assets/h4.png"
   },
   {
     user: "Memeo",
-    avatar: "/photo-1539571696357-5a69c17a67c6",
+    avatar: "https://pythago.ai/bruh/assets/avatar3.png",
     text: "Got a random prophecy on my NFC hoodie. LOL!",
-    img: "/photo-1507499739999-097706ad8914"
+    img: "https://pythago.ai/bruh/assets/monkeyt4.png"
   },
 ];
 

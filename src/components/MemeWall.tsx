@@ -1,9 +1,9 @@
 
 const memes = [
-  { url: "/photo-1573246123716-6b1782bfc499", caption: "Meme Prophecy #1" },
-  { url: "/photo-1507457379470-08b800bebc67", caption: "Human Not Found!" },
-  { url: "/photo-1618331833071-ce81bd50d300", caption: "Drip Portal :D" },
-  { url: "/photo-1543852786-1cf6624b9987", caption: "Intergalactic Cat" },
+  { url: "https://pythago.ai/bruh/assets/t5.png", caption: "Meme Prophecy #1" },
+  { url: "https://pythago.ai/bruh/assets/h5.png", caption: "Human Not Found!" },
+  { url: "https://pythago.ai/bruh/assets/t6.png", caption: "Drip Portal :D" },
+  { url: "https://pythago.ai/bruh/assets/monkeyt4.png", caption: "Intergalactic Cat" },
 ];
 
 const MemeWall = () => (
