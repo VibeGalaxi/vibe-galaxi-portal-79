@@ -1,9 +1,9 @@
 
 const memes = [
-  { url: "https://pythago.ai/bruh/assets/t5.png", caption: "Meme Prophecy #1" },
-  { url: "https://pythago.ai/bruh/assets/h5.png", caption: "Human Not Found!" },
-  { url: "https://pythago.ai/bruh/assets/t6.png", caption: "Drip Portal :D" },
-  { url: "https://pythago.ai/bruh/assets/monkeyt4.png", caption: "Intergalactic Cat" },
+  { id: 1, url: "https://pythago.ai/bruh/assets/t5.png", caption: "Meme Prophecy #1" },
+  { id: 2, url: "https://pythago.ai/bruh/assets/h5.png", caption: "Human Not Found!" },
+  { id: 3, url: "https://pythago.ai/bruh/assets/t6.png", caption: "Drip Portal :D" },
+  { id: 4, url: "https://pythago.ai/bruh/assets/monkeyt4.png", caption: "Intergalactic Cat" },
 ];
 
 const MemeWall = () => (
@@ -14,8 +14,17 @@ const MemeWall = () => (
     </div>
     <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-4xl mx-auto animate-fade-in">
       {memes.map((m) => (
-        <div key={m.url} className="group rounded-xl overflow-hidden shadow-lg bg-white/10 backdrop-blur-xl glass-morphism hover:scale-105 hover:shadow-2xl transition-all cursor-pointer relative">
-          <img src={m.url} alt={m.caption} className="w-full h-40 object-cover group-hover:brightness-125 group-hover:scale-110 transition-all" loading="lazy" />
+        <div key={m.id} className="group rounded-xl overflow-hidden shadow-lg bg-white/10 backdrop-blur-xl glass-morphism hover:scale-105 hover:shadow-2xl transition-all cursor-pointer relative">
+          <img 
+            src={m.url} 
+            alt={m.caption} 
+            className="w-full h-40 object-cover group-hover:brightness-125 group-hover:scale-110 transition-all" 
+            loading="lazy" 
+            onError={(e) => {
+              console.log(`Image failed to load: ${m.url}`);
+              e.currentTarget.src = "https://placehold.co/400x400?text=Meme";
+            }}
+          />
           <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/75 to-transparent text-xs text-white px-2 py-1 font-montserrat">{m.caption}</div>
         </div>
       ))}

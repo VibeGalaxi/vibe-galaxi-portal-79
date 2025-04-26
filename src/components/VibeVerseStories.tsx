@@ -43,6 +43,10 @@ const VibeVerseStories = () => {
                 src={story.thumbnail}
                 alt={story.title}
                 className="w-full h-full object-cover"
+                onError={(e) => {
+                  console.log(`Image failed to load: ${story.thumbnail}`);
+                  e.currentTarget.src = "https://placehold.co/600x340?text=Story+Thumbnail";
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
                 <div className="absolute bottom-0 p-6 w-full">

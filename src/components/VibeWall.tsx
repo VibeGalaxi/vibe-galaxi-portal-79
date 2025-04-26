@@ -19,7 +19,7 @@ const posts = [
   {
     id: 3,
     username: "VibeKing",
-    image: "https://pythago.ai/bruh/assets/h3.png", // Updated to the hoodie image you requested
+    image: "https://pythago.ai/bruh/assets/h3.png", // Updated to the hoodie image
     caption: "My portal hoodie just arrived! 🔮", 
     likes: 567
   }
@@ -42,6 +42,10 @@ const VibeWall = () => (
               src={post.image}
               alt={post.caption}
               className="w-full aspect-[4/5] object-cover"
+              onError={(e) => {
+                console.log(`Image failed to load: ${post.image}`);
+                e.currentTarget.src = "https://placehold.co/600x800?text=Image+Not+Found";
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
               <div className="absolute bottom-0 p-4 w-full">

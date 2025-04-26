@@ -48,6 +48,10 @@ const VibeClashArena = () => {
                 src={design.image}
                 alt={design.name}
                 className="w-full aspect-[4/3] object-cover"
+                onError={(e) => {
+                  console.log(`Image failed to load: ${design.image}`);
+                  e.currentTarget.src = "https://placehold.co/600x400?text=Design+Image";
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                 <div className="absolute bottom-0 p-6 w-full">
