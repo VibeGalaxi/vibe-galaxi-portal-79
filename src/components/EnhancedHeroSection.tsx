@@ -52,31 +52,33 @@ const EnhancedHeroSection = () => {
       title: "Quantum Weave T-Shirt",
       subtitle: "Embedded with quantum computing patterns, our most popular t-shirt design transforms your style into digital art.",
       image: "https://pythago.ai/bruh/assets/5.png",
-      badge: "T-Shirts Collection"
+      badge: "T-Shirts Collection",
+      features: ["Quantum-inspired design", "Premium fabric", "Digitally enhanced patterns"]
     },
     {
       title: "Nebulahood™ Classic",
       subtitle: "Our signature hoodie with glow-in-dark constellation patterns and hidden smart pockets.",
       image: "https://pythago.ai/bruh/assets/h1.png",
-      badge: "Hoodies Collection"
+      badge: "Hoodies Collection",
+      features: ["Glow-in-dark constellations", "Hidden smart pockets", "Premium comfort"]
     },
     {
       title: "Cosmic Brew Master",
       subtitle: "Temperature-sensitive constellation design reveals itself as you enjoy your favorite beverage.",
       image: "https://pythago.ai/bruh/assets/c1.png",
-      badge: "Mugs Collection"
+      badge: "Mugs Collection",
+      features: ["Temperature-sensitive design", "Premium ceramic", "Dishwasher safe"]
     }
   ];
 
   return (
     <motion.section
       ref={heroRef}
-      className="relative flex flex-col items-center justify-center min-h-screen px-4 py-32 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cosmic-900"
       onMouseMove={handleMouseMove}
       initial="hidden"
       animate="visible"
     >
-      {/* Background effects */}
       <div className="absolute inset-0 z-0">
         <div 
           className="absolute inset-0 bg-cosmic-900"
@@ -140,76 +142,118 @@ const EnhancedHeroSection = () => {
         />
       </div>
       
-      <Carousel className="w-full max-w-7xl mx-auto">
+      <Carousel className="w-full h-screen">
         <CarouselContent>
           {slides.map((slide, index) => (
-            <CarouselItem key={index} className="relative">
-              <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto">
+            <CarouselItem key={index}>
+              <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen items-center gap-8 px-6 lg:px-16">
                 <motion.div 
-                  className="mb-8 relative"
-                  initial={{ y: -20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  className="relative order-2 lg:order-1"
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-neon-pink to-neon-blue opacity-30 blur-xl rounded-full" />
-                  <div className="glass-morphism px-6 py-3 rounded-full flex items-center gap-2 border border-white/20 group hover:border-white/30 transition-all">
-                    <Rocket size={20} className="text-neon-pink animate-pulse" />
-                    <span className="text-base font-medium bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-neon-pink group-hover:to-neon-blue transition-all">
-                      {slide.badge}
-                    </span>
-                    <div className="w-2 h-2 rounded-full bg-neon-pink animate-pulse" />
+                  <div className="relative aspect-square w-full max-w-2xl mx-auto">
+                    <div className="absolute inset-0 bg-gradient-to-br from-neon-pink/20 to-neon-blue/20 rounded-3xl blur-2xl" />
+                    <img 
+                      src={slide.image} 
+                      alt={slide.title}
+                      className="relative z-10 w-full h-full object-cover rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute -inset-1 bg-gradient-to-r from-neon-pink to-neon-blue opacity-30 blur-sm rounded-3xl" />
                   </div>
                 </motion.div>
-                
-                <motion.h1 
-                  className="font-orbitron text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight"
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: { 
-                      opacity: 1, 
-                      y: 0,
-                      transition: { duration: 0.8, ease: "easeOut" }
-                    }
-                  }}
-                >
-                  <div className="relative">
-                    <span className="absolute -inset-1 -z-10 bg-gradient-to-r from-neon-pink to-neon-blue opacity-30 blur-xl rounded-lg"></span>
-                    <span className="relative">{slide.title}</span>
-                  </div>
-                </motion.h1>
-                
-                <motion.p 
-                  className="mt-4 mb-10 text-xl md:text-2xl font-montserrat text-white/90 max-w-2xl leading-relaxed"
-                  variants={{
-                    hidden: { opacity: 0, y: 30 },
-                    visible: { 
-                      opacity: 1, 
-                      y: 0,
-                      transition: { duration: 0.8, delay: 0.3, ease: "easeOut" }
-                    }
-                  }}
-                >
-                  {slide.subtitle}
-                </motion.p>
 
-                <div className="relative w-full max-w-3xl aspect-[16/9] rounded-xl overflow-hidden">
-                  <img 
-                    src={slide.image} 
-                    alt={slide.title}
-                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d0620] via-transparent to-transparent opacity-50" />
-                </div>
+                <motion.div 
+                  className="order-1 lg:order-2 space-y-8"
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <motion.div 
+                    className="relative inline-block"
+                    initial={{ y: -20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                  >
+                    <div className="glass-morphism px-6 py-3 rounded-full flex items-center gap-2 border border-white/20 group hover:border-white/30 transition-all">
+                      <Rocket size={20} className="text-neon-pink animate-pulse" />
+                      <span className="text-base font-medium bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-neon-pink group-hover:to-neon-blue transition-all">
+                        {slide.badge}
+                      </span>
+                      <div className="w-2 h-2 rounded-full bg-neon-pink animate-pulse" />
+                    </div>
+                  </motion.div>
+                  
+                  <motion.h1 
+                    className="font-orbitron text-4xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-tight"
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { 
+                        opacity: 1, 
+                        y: 0,
+                        transition: { duration: 0.8, ease: "easeOut" }
+                      }
+                    }}
+                  >
+                    <div className="relative">
+                      <span className="absolute -inset-1 -z-10 bg-gradient-to-r from-neon-pink to-neon-blue opacity-30 blur-xl rounded-lg"></span>
+                      <span className="relative">{slide.title}</span>
+                    </div>
+                  </motion.h1>
+                  
+                  <motion.p 
+                    className="text-xl lg:text-2xl text-white/90 max-w-xl leading-relaxed"
+                    variants={{
+                      hidden: { opacity: 0, y: 30 },
+                      visible: { 
+                        opacity: 1, 
+                        y: 0,
+                        transition: { duration: 0.8, delay: 0.3, ease: "easeOut" }
+                      }
+                    }}
+                  >
+                    {slide.subtitle}
+                  </motion.p>
+
+                  <motion.div 
+                    className="flex flex-col gap-3"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 }}
+                  >
+                    {slide.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-neon-pink" />
+                        <span className="text-white/80">{feature}</span>
+                      </div>
+                    ))}
+                  </motion.div>
+
+                  <motion.div 
+                    className="flex gap-4 pt-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.7 }}
+                  >
+                    <button className="premium-button">
+                      Explore Now
+                    </button>
+                    <button className="cosmic-button">
+                      Learn More
+                    </button>
+                  </motion.div>
+                </motion.div>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-4 bg-white/10 hover:bg-white/20 border-none" />
-        <CarouselNext className="right-4 bg-white/10 hover:bg-white/20 border-none" />
+        <CarouselPrevious className="left-4 lg:left-8 bg-white/10 hover:bg-white/20 border-none" />
+        <CarouselNext className="right-4 lg:right-8 bg-white/10 hover:bg-white/20 border-none" />
       </Carousel>
 
       <motion.div 
-        className="flex flex-col items-center mt-8"
+        className="absolute bottom-8 left-0 right-0 flex flex-col items-center"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.6 }}
