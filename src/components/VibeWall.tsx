@@ -19,8 +19,8 @@ const posts = [
   {
     id: 3,
     username: "VibeKing",
-    image: "https://pythago.ai/bruh/assets/monkeyt4.png",
-    caption: "My portal hoodie just arrived! 🔮",
+    image: "https://pythago.ai/bruh/assets/c1.png", // Changed to a mug image from products.ts
+    caption: "My portal hoodie just arrived! 🔮", 
     likes: 567
   }
 ];
