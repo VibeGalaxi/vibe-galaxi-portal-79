@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+
+import { Link, useLocation } from "react-router-dom";
 import { Rocket, User, ShoppingBag, Menu, X, Star, ArrowUpRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -15,6 +16,7 @@ const PremiumNavbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => {
@@ -34,6 +36,15 @@ const PremiumNavbar = () => {
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
     document.body.style.overflow = !mobileMenuOpen ? 'hidden' : 'auto';
+  };
+
+  // Helper function to determine whether to use Link or a regular anchor tag
+  const NavLink = ({ to, children, ...props }) => {
+    // Use Link for internal navigation and 'a' for hash links
+    if (to.startsWith('#')) {
+      return <a href={to} {...props}>{children}</a>;
+    }
+    return <Link to={to} {...props}>{children}</Link>;
   };
 
   return (
@@ -70,15 +81,15 @@ const PremiumNavbar = () => {
           <ul className="hidden md:flex gap-1 items-center">
             {links.map(({ label, href, highlight }) => (
               <li key={label}>
-                <Link 
-                  to={href} 
+                <NavLink
+                  to={href}
                   className={`px-4 py-2 rounded-lg transition-all duration-300 text-sm font-medium
                             ${highlight 
                               ? 'text-white bg-gradient-to-r from-neon-pink/20 to-neon-blue/20 hover:from-neon-pink/30 hover:to-neon-blue/30' 
                               : 'text-white/80 hover:text-white hover:bg-white/5'}`}
                 >
                   {label}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -121,9 +132,9 @@ const PremiumNavbar = () => {
         <div className="flex flex-col h-full pt-24 px-6 pb-8">
           <ul className="flex flex-col gap-3 mb-8">
             {links.map(({ label, href, highlight }) => (
-              <li key={label}>
-                <Link 
-                  to={href} 
+              <li key={`mobile-${label}`}>
+                <NavLink
+                  to={href}
                   className={`block px-4 py-3 rounded-lg transition-all text-lg font-medium ${
                     highlight 
                       ? 'text-white bg-gradient-to-r from-neon-pink/20 to-neon-blue/20' 
@@ -132,7 +143,7 @@ const PremiumNavbar = () => {
                   onClick={toggleMobileMenu}
                 >
                   {label}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>
