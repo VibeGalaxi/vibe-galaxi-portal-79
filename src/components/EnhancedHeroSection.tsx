@@ -1,4 +1,3 @@
-
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Star, ShieldAlert, Rocket } from "lucide-react";
@@ -11,7 +10,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-// Properly defined calculateParallaxOffset function with proper typing
 const calculateParallaxOffset = (scrollPosition: number, factor: number) => {
   return {
     transform: `translateY(${scrollPosition * factor}px)`
@@ -51,28 +49,22 @@ const EnhancedHeroSection = () => {
 
   const slides = [
     {
-      title: "Your Merch Is From Another Dimension",
-      subtitle: "VibeMerch™ isn't just clothing—it's a wearable portal to VibeGalaxi, the meme-powered universe where style, lore, and chaos collide.",
-      image: "/photo-1618160702438-9b02ab6515c9",
-      badge: "Lansare VibeMerch 2025"
+      title: "Quantum Weave T-Shirt",
+      subtitle: "Embedded with quantum computing patterns, our most popular t-shirt design transforms your style into digital art.",
+      image: "https://pythago.ai/bruh/assets/5.png",
+      badge: "T-Shirts Collection"
     },
     {
-      title: "Cosmic Mug Collection",
-      subtitle: "Sip into another dimension with our constellation-inspired mugs. Each one tells a story from the VibeGalaxi.",
-      image: "/photo-1618160702438-9b02ab6515c9",
-      badge: "Limited Edition Mugs"
+      title: "Nebulahood™ Classic",
+      subtitle: "Our signature hoodie with glow-in-dark constellation patterns and hidden smart pockets.",
+      image: "https://pythago.ai/bruh/assets/h1.png",
+      badge: "Hoodies Collection"
     },
     {
-      title: "Quantum Tee Series",
-      subtitle: "Wear the future with our reality-bending t-shirts. Made with fabric from the edge of the universe.",
-      image: "/photo-1582562124811-c09040d0a901",
-      badge: "New Drop Alert"
-    },
-    {
-      title: "Nebula Hoodie Experience",
-      subtitle: "Step into warmth from the stars. Our hoodies are infused with cosmic comfort technology.",
-      image: "/photo-1527576539890-dfa815648363",
-      badge: "Premium Collection"
+      title: "Cosmic Brew Master",
+      subtitle: "Temperature-sensitive constellation design reveals itself as you enjoy your favorite beverage.",
+      image: "https://pythago.ai/bruh/assets/c1.png",
+      badge: "Mugs Collection"
     }
   ];
 
