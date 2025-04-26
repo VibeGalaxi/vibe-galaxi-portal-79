@@ -1,4 +1,3 @@
-
 import { useParams, Link } from "react-router-dom";
 import { categories } from "@/data/products";
 import { Star, ArrowLeft, ShoppingBag, Heart, Share, Info, Check } from "lucide-react";
@@ -12,7 +11,6 @@ const ProductDetail = () => {
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [quantity, setQuantity] = useState(1);
 
-  // Găsim categoria și produsul
   const category = categories.find(cat => cat.id === categoryId);
   const product = category?.products.find(p => p.id === Number(productId));
 
@@ -20,7 +18,6 @@ const ProductDetail = () => {
     return <div>Produs negăsit</div>;
   }
 
-  // Produse similare în aceeași categorie
   const similarProducts = category?.products
     .filter(p => p.id !== product.id)
     .slice(0, 3);
@@ -81,7 +78,6 @@ const ProductDetail = () => {
     <div className="min-h-screen bg-gradient-to-b from-cosmic-900 to-cosmic-800 text-white">
       <PremiumNavbar />
       
-      {/* Back to category link */}
       <div className="container mx-auto px-4 pt-24 pb-6">
         <Link 
           to="/" 
@@ -92,27 +88,24 @@ const ProductDetail = () => {
         </Link>
       </div>
       
-      {/* Main product section */}
       <div className="container mx-auto px-4 pb-20">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
-          {/* Product image section */}
           <div className="space-y-6">
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-neon-pink/30 to-neon-blue/30 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+            <div className="relative group overflow-hidden rounded-2xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-neon-pink/30 to-neon-blue/30 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <img 
                 src={product.image} 
                 alt={product.name} 
-                className="w-full rounded-2xl shadow-2xl hover-3d border border-white/10"
+                className="w-full rounded-2xl shadow-2xl border border-white/10 transition-transform duration-500 ease-out group-hover:scale-125 hover:cursor-zoom-in"
               />
               
               {product.limitedEdition && (
-                <div className="absolute top-4 right-4 bg-gradient-to-r from-neon-pink to-neon-blue px-4 py-2 rounded-full text-sm font-bold shadow-neon animate-pulse-neon">
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-neon-pink to-neon-blue px-4 py-2 rounded-full text-sm font-bold shadow-neon animate-pulse-neon z-10">
                   Ediție Limitată
                 </div>
               )}
             </div>
             
-            {/* Product features */}
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
               <h3 className="text-xl font-orbitron mb-4 flex items-center">
                 <Info className="w-5 h-5 mr-2 text-neon-blue" />
@@ -139,9 +132,7 @@ const ProductDetail = () => {
             </div>
           </div>
 
-          {/* Product details section */}
           <div className="space-y-8">
-            {/* Product title and badges */}
             <div>
               <div className="mb-3 flex gap-2">
                 <span className="bg-gradient-to-r from-neon-pink to-neon-blue px-3 py-1 rounded-full text-xs font-medium">
@@ -182,7 +173,6 @@ const ProductDetail = () => {
               </div>
             </div>
             
-            {/* Size selection */}
             <div>
               <h3 className="text-lg font-medium mb-3">Selectează mărimea</h3>
               <div className="flex flex-wrap gap-3">
@@ -205,7 +195,6 @@ const ProductDetail = () => {
               )}
             </div>
             
-            {/* Quantity */}
             <div>
               <h3 className="text-lg font-medium mb-3">Cantitate</h3>
               <div className="flex items-center gap-4">
@@ -230,7 +219,6 @@ const ProductDetail = () => {
               </div>
             </div>
             
-            {/* Action buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={handleAddToCart}
@@ -248,7 +236,6 @@ const ProductDetail = () => {
               </button>
             </div>
             
-            {/* Extra actions */}
             <div className="flex gap-4 pt-4">
               <button
                 onClick={handleAddToWishlist}
@@ -270,7 +257,6 @@ const ProductDetail = () => {
         </div>
       </div>
       
-      {/* Product details tabs */}
       <div className="bg-cosmic-800 py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
@@ -314,8 +300,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
-          
-      {/* Similar products section */}
+      
       <div className="container mx-auto px-4 py-20">
         <h2 className="text-3xl font-orbitron font-bold mb-10 text-center">Produse similare</h2>
         
@@ -349,7 +334,6 @@ const ProductDetail = () => {
         </div>
       </div>
       
-      {/* Testimonials section */}
       <div className="bg-cosmic-800 py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-orbitron font-bold mb-2 text-center">Ce spun Vibonauții</h2>
@@ -396,7 +380,6 @@ const ProductDetail = () => {
         </div>
       </div>
       
-      {/* CTA section */}
       <div className="container mx-auto px-4 py-20">
         <div className="relative py-16 px-8 rounded-3xl overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-neon-pink/20 to-neon-blue/20 backdrop-blur-sm border border-white/10 rounded-3xl" />
