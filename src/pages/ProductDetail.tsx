@@ -1,10 +1,12 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { categories } from "@/data/products";
 import { Star, ArrowLeft, ShoppingBag, Heart, Share, Info, Check } from "lucide-react";
 import PremiumNavbar from "@/components/PremiumNavbar";
 import Footer from "@/components/Footer";
 import { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
+import TeeNomics from "@/components/TeeNomics";
+import Roadmap from "@/components/Roadmap";
 
 const ProductDetail = () => {
   const { categoryId, productId } = useParams();
@@ -75,7 +77,7 @@ const ProductDetail = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-cosmic-900 to-cosmic-800 text-white">
+    <div className="min-h-screen bg-cosmic-900">
       <PremiumNavbar />
       
       {/* Back Button */}
@@ -422,6 +424,9 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
+      
+      <TeeNomics />
+      <Roadmap />
       
       <Footer />
     </div>
