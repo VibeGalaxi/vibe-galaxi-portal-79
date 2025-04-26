@@ -1,10 +1,10 @@
-
+import { Link } from "react-router-dom";
 import { Rocket, User, ShoppingBag, Menu, X, Star, ArrowUpRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const links = [
-  { label: "Home", href: "#", highlight: false },
-  { label: "Collections", href: "#category-slider", highlight: false },
+  { label: "Home", href: "/", highlight: false },
+  { label: "Collections", href: "/#category-slider", highlight: false },
   { label: "Drops", href: "#drops", highlight: true },
   { label: "Community", href: "#comunitate", highlight: false },
   { label: "FAQ", href: "#faq", highlight: false },
@@ -21,7 +21,6 @@ const PremiumNavbar = () => {
       const scrollY = window.scrollY;
       setScrolled(scrollY > 24);
       
-      // Calculate scroll progress
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const scrolled = (winScroll / height) * 100;
@@ -34,7 +33,6 @@ const PremiumNavbar = () => {
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
-    // Prevent scrolling when mobile menu is open
     document.body.style.overflow = !mobileMenuOpen ? 'hidden' : 'auto';
   };
 
@@ -47,15 +45,14 @@ const PremiumNavbar = () => {
             : "py-5 bg-transparent"
         }`}
       >
-        {/* Progress bar */}
         <div 
           className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-neon-pink via-neon-purple to-neon-blue" 
           style={{ width: `${scrollProgress}%` }}
         />
         
         <div className="flex items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <a 
-            href="#" 
+          <Link 
+            to="/" 
             className="flex items-center gap-2 font-orbitron text-2xl font-bold transition-all duration-300 group"
           >
             <div className="relative w-10 h-10 flex items-center justify-center">
@@ -68,21 +65,20 @@ const PremiumNavbar = () => {
             <span className="bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent group-hover:from-neon-pink group-hover:to-neon-blue transition-all duration-300">
               VibeGalaxi
             </span>
-          </a>
+          </Link>
           
-          {/* Desktop Navigation */}
           <ul className="hidden md:flex gap-1 items-center">
             {links.map(({ label, href, highlight }) => (
               <li key={label}>
-                <a 
-                  href={href} 
+                <Link 
+                  to={href} 
                   className={`px-4 py-2 rounded-lg transition-all duration-300 text-sm font-medium
                             ${highlight 
                               ? 'text-white bg-gradient-to-r from-neon-pink/20 to-neon-blue/20 hover:from-neon-pink/30 hover:to-neon-blue/30' 
                               : 'text-white/80 hover:text-white hover:bg-white/5'}`}
                 >
                   {label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -107,7 +103,6 @@ const PremiumNavbar = () => {
             </a>
           </div>
           
-          {/* Mobile Menu Button */}
           <button 
             className="md:hidden p-2 text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-all"
             onClick={toggleMobileMenu}
@@ -118,7 +113,6 @@ const PremiumNavbar = () => {
         </div>
       </nav>
       
-      {/* Mobile Navigation Overlay */}
       <div 
         className={`fixed inset-0 z-40 backdrop-blur-xl bg-cosmic-900/95 transition-transform duration-500 transform ${
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
@@ -128,8 +122,8 @@ const PremiumNavbar = () => {
           <ul className="flex flex-col gap-3 mb-8">
             {links.map(({ label, href, highlight }) => (
               <li key={label}>
-                <a 
-                  href={href} 
+                <Link 
+                  to={href} 
                   className={`block px-4 py-3 rounded-lg transition-all text-lg font-medium ${
                     highlight 
                       ? 'text-white bg-gradient-to-r from-neon-pink/20 to-neon-blue/20' 
@@ -138,7 +132,7 @@ const PremiumNavbar = () => {
                   onClick={toggleMobileMenu}
                 >
                   {label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
