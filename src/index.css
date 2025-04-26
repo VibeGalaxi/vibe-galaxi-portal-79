@@ -44,7 +44,7 @@
   }
 
   .cosmic-button::before {
-    @apply content-[''] absolute inset-0 -z-10 bg-gradient-to-r from-neon-pink from-opacity-20 to-neon-blue to-opacity-20 opacity-0 transition-opacity duration-300;
+    @apply content-[''] absolute inset-0 -z-10 bg-gradient-to-r from-neon-pink/20 to-neon-blue/20 opacity-0 transition-opacity duration-300;
   }
 
   .cosmic-button:hover::before {
