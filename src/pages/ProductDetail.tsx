@@ -102,7 +102,7 @@ const ProductDetail = () => {
                 <img 
                   src={product.image} 
                   alt={product.name} 
-                  className="w-full h-auto rounded-2xl shadow-2xl border border-white/10 transition-transform duration-500 ease-out group-hover:scale-125"
+                  className="w-full h-auto rounded-2xl shadow-2xl border border-white/10 transition-transform duration-500 ease-out group-hover:scale-[1.3]"
                 />
               </div>
               
