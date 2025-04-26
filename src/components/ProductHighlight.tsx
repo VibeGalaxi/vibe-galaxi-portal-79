@@ -1,4 +1,3 @@
-
 import { ReactNode, useEffect, useRef, useState } from "react";
 import { Star, ArrowUpRight, ShieldCheck } from "lucide-react";
 
@@ -17,7 +16,7 @@ const ProductHighlight = ({
   headline,
   subhead,
   features,
-  imageUrl,
+  imageUrl = "https://pythago.ai/bruh/assets/images/home-1-newsletter.webp",
   reverse,
   bgFrom = "#221F26",
   bgTo = "#1EAEDB",
@@ -57,15 +56,13 @@ const ProductHighlight = ({
     });
   };
   
-  // Calculate transform based on mouse position
   const calculateTransform = () => {
     if (!isHovering || !imageUrl) return {};
     
-    const maxRotation = 6; // Maximum rotation in degrees
+    const maxRotation = 6;
     
-    // Calculate rotation based on mouse position
-    const centerX = 150; // Assuming image container width is 300px
-    const centerY = 150; // Assuming image container height is 300px
+    const centerX = 150;
+    const centerY = 150;
     
     const rotateY = ((mousePosition.x - centerX) / centerX) * maxRotation;
     const rotateX = ((centerY - mousePosition.y) / centerY) * maxRotation;
@@ -84,12 +81,8 @@ const ProductHighlight = ({
         background: `linear-gradient(135deg, ${bgFrom} 0%, ${bgTo} 100%)`,
       }}
     >
-      {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Cosmic grid */}
         <div className="absolute inset-0 cosmic-grid opacity-20" />
-        
-        {/* Floating orbs */}
         <div 
           className="absolute w-64 h-64 rounded-full blur-3xl opacity-20"
           style={{ 
@@ -99,7 +92,6 @@ const ProductHighlight = ({
             animation: 'float 15s infinite ease-in-out'
           }}
         />
-        
         <div 
           className="absolute w-96 h-96 rounded-full blur-3xl opacity-10"
           style={{ 
@@ -109,8 +101,6 @@ const ProductHighlight = ({
             animation: 'float 20s infinite ease-in-out reverse'
           }}
         />
-        
-        {/* Stars */}
         {Array.from({ length: 50 }).map((_, i) => (
           <div
             key={i}
@@ -140,7 +130,6 @@ const ProductHighlight = ({
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
-            {/* Highlight glow effect */}
             <div 
               className="absolute -inset-4 rounded-full opacity-30 blur-2xl"
               style={{ 
@@ -149,7 +138,6 @@ const ProductHighlight = ({
               }}
             />
             
-            {/* 3D perspective container */}
             <div 
               className="relative rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl"
               style={calculateTransform()}
@@ -161,10 +149,8 @@ const ProductHighlight = ({
                 loading="lazy"
               />
               
-              {/* Overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60" />
               
-              {/* Interactive elements */}
               <div className="absolute bottom-4 right-4 flex space-x-2">
                 <button className="p-2 backdrop-blur-sm bg-white/10 rounded-full hover:bg-white/20 transition-colors">
                   <Star className="w-5 h-5 text-white" />
@@ -174,7 +160,6 @@ const ProductHighlight = ({
                 </button>
               </div>
               
-              {/* Premium badge */}
               <div className="absolute top-4 left-4 px-3 py-1 rounded-full backdrop-blur-sm bg-white/10 border border-white/20 text-xs font-medium flex items-center gap-1">
                 <ShieldCheck className="w-3 h-3 text-neon-blue" />
                 <span>Premium</span>
