@@ -9,7 +9,8 @@ const VibeMemeGenerator = () => {
 
   const memeImages = [
     "https://pythago.ai/bruh/assets/monkey2.png",
-    "https://pythago.ai/bruh/assets/monkey1.png"
+    "https://pythago.ai/bruh/assets/monkey1.png", 
+    "https://pythago.ai/bruh/assets/monkeyt1.png"
   ];
 
   const handleGenerate = (e: React.FormEvent) => {
