@@ -7,18 +7,22 @@ const VibeMemeGenerator = () => {
   const [memeUrl, setMemeUrl] = useState("");
   const [imageIndex, setImageIndex] = useState(0);
 
+  // Updated reliable image URLs using placeholder images
   const memeImages = [
-    "https://pythago.ai/bruh/assets/monkey2.png",
-    "https://pythago.ai/bruh/assets/monkey1.png", 
-    "https://pythago.ai/bruh/assets/monkeyt1.png"
+    "https://source.unsplash.com/featured/?monkey",
+    "https://source.unsplash.com/featured/?chimp",
+    "https://source.unsplash.com/featured/?gorilla"
   ];
 
+  // Add console logs to help debug
   const handleGenerate = (e: React.FormEvent) => {
     e.preventDefault();
     setGenerating(true);
     // Simulate generation and alternate between images
     setTimeout(() => {
-      setMemeUrl(memeImages[imageIndex]);
+      const selectedImage = memeImages[imageIndex];
+      console.log("Generating meme with image:", selectedImage);
+      setMemeUrl(selectedImage);
       setImageIndex((prevIndex) => (prevIndex + 1) % memeImages.length);
       setGenerating(false);
     }, 2000);
@@ -80,6 +84,10 @@ const VibeMemeGenerator = () => {
                 src={memeUrl}
                 alt="Generated VibeMeme"
                 className="w-full h-full object-cover"
+                onError={(e) => {
+                  console.log("Image failed to load:", e.currentTarget.src);
+                  e.currentTarget.src = "https://placehold.co/600x400?text=Vibing+Monkey";
+                }}
               />
               <div className="absolute bottom-4 right-4 flex gap-2">
                 <button className="p-2 rounded-lg bg-white/10 backdrop-blur border border-white/20 text-white hover:scale-110 transition-transform">
