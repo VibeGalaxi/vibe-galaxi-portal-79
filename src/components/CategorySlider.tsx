@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -19,24 +18,72 @@ const categories = [
         id: 1,
         name: "Don't Kill My Vibe",
         description: "Intergalactic best seller with NFC meme lore",
-        image: "https://pythago.ai/bruh/assets/llama1.png",
+        image: "https://pythago.ai/bruh/assets/1.png",
         badge: "NFC-enabled",
         limitedEdition: true
       },
       {
         id: 2,
-        name: "Error 404",
+        name: "Cosmic Flow",
         description: "Glow-in-the-dark coding humor for the metaverse",
-        image: "https://pythago.ai/bruh/assets/monkeyt2.png",
+        image: "https://pythago.ai/bruh/assets/2.png",
         badge: "Glow-in-dark",
         limitedEdition: false
       },
       {
         id: 3,
-        name: "VibeCheck™",
+        name: "Digital Dreams",
         description: "QR code unlocks exclusive digital art gallery",
-        image: "https://pythago.ai/bruh/assets/monkeyt4.png",
+        image: "https://pythago.ai/bruh/assets/3.png",
         badge: "QR-enabled",
+        limitedEdition: true
+      },
+      {
+        id: 4,
+        name: "Neural Network",
+        description: "AI-generated patterns that evolve with wear",
+        image: "https://pythago.ai/bruh/assets/4.png",
+        badge: "AI-powered",
+        limitedEdition: true
+      },
+      {
+        id: 5,
+        name: "Quantum Weave",
+        description: "Embedded with quantum computing patterns",
+        image: "https://pythago.ai/bruh/assets/5.png",
+        badge: "Quantum-tech",
+        limitedEdition: false
+      },
+      {
+        id: 6,
+        name: "Cyber Pulse",
+        description: "Interactive LED patterns respond to music",
+        image: "https://pythago.ai/bruh/assets/6.png",
+        badge: "LED-reactive",
+        limitedEdition: true
+      },
+      {
+        id: 7,
+        name: "Meta Vision",
+        description: "AR-enabled designs visible in the metaverse",
+        image: "https://pythago.ai/bruh/assets/7.png",
+        badge: "AR-enabled",
+        limitedEdition: true
+      },
+      {
+        id: 8,
+        name: "Digital Echo",
+        description: "Sound-reactive patterns with bass visualization",
+        image: "https://pythago.ai/bruh/assets/8.png",
+        badge: "Sound-reactive",
+        limitedEdition: false
+      },
+      {
+        id: 9,
+        name: "Neural Drift",
+        description: "AI-curated design that changes daily",
+        image: "https://pythago.ai/bruh/assets/9.png",
+        badge: "AI-evolving",
         limitedEdition: true
       }
     ]
