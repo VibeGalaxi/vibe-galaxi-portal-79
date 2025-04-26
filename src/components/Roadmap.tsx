@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 
 const phases = [
@@ -107,13 +108,13 @@ const Roadmap = () => {
         </div>
       </div>
 
-      <style jsx>{`
-        .vertical-text {
+      <style>
+        {`.vertical-text {
           writing-mode: vertical-lr;
           text-orientation: mixed;
           transform: rotate(180deg);
-        }
-      `}</style>
+        }`}
+      </style>
     </section>
   );
 };

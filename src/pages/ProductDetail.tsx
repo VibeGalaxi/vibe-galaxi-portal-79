@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { categories } from "@/data/products";
 import { Star, ArrowLeft, ShoppingBag, Heart, Share, Info, Check } from "lucide-react";
 import PremiumNavbar from "@/components/PremiumNavbar";
@@ -7,7 +7,6 @@ import { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
 import TeeNomics from "@/components/TeeNomics";
 import Roadmap from "@/components/Roadmap";
-import { Link } from "react-router-dom";
 
 const ProductDetail = () => {
   const { categoryId, productId } = useParams();
