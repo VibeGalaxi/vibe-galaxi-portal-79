@@ -90,38 +90,6 @@ export const categories = [
     ]
   },
   {
-    id: "shorts",
-    name: "Shorts",
-    icon: Flame,
-    color: "from-[#F97316] to-[#ff8800]",
-    products: [
-      {
-        id: 1,
-        name: "Cosmic Shorts",
-        description: "Ultimate comfort with cosmic energy patterns",
-        image: "https://pythago.ai/bruh/assets/lama4shorts.png",
-        badge: "Ultra-comfort",
-        limitedEdition: true
-      },
-      {
-        id: 2,
-        name: "Digital Flow",
-        description: "Breathable fabric with embedded tech patterns",
-        image: "/photo-1500673922987-e212871fec22",
-        badge: "Tech-fabric",
-        limitedEdition: false
-      },
-      {
-        id: 3,
-        name: "Vibrant Flex",
-        description: "Stretchy athletic shorts with holographic finish",
-        image: "/photo-1526374965328-7f61d4dc18c5",
-        badge: "Athletic-fit",
-        limitedEdition: true
-      }
-    ]
-  },
-  {
     id: "hoodies",
     name: "Hoodies",
     icon: Asterisk,
@@ -253,38 +221,6 @@ export const categories = [
         description: "Limited edition cosmic design with holographic effect",
         image: "https://pythago.ai/bruh/assets/c10.png",
         badge: "Holographic",
-        limitedEdition: true
-      }
-    ]
-  },
-  {
-    id: "accessories",
-    name: "Accessories",
-    icon: BadgeCheck,
-    color: "from-[#00ccff] to-[#1EAEDB]",
-    products: [
-      {
-        id: 1,
-        name: "Digital Soul Card",
-        description: "NFC card that stores your VibeGalaxi identity",
-        image: "/photo-1581091226825-a6a2a5aee158",
-        badge: "Digital ID",
-        limitedEdition: false
-      },
-      {
-        id: 2,
-        name: "Holographic Pins",
-        description: "Collection of limited edition VibeMerch badges",
-        image: "/photo-1470813740244-df37b8c1edcb",
-        badge: "Collectible",
-        limitedEdition: true
-      },
-      {
-        id: 3,
-        name: "Quantum Wallet",
-        description: "Stores both crypto and physical currency",
-        image: "/photo-1526374965328-7f61d4dc18c5",
-        badge: "Multi-dimensional",
         limitedEdition: true
       }
     ]
