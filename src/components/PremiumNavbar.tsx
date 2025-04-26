@@ -2,6 +2,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Rocket, User, ShoppingBag, Menu, X, Star, ArrowUpRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const links = [
   { label: "Home", href: "/", highlight: false },
@@ -17,6 +18,7 @@ const PremiumNavbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const location = useLocation();
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const onScroll = () => {
@@ -47,13 +49,20 @@ const PremiumNavbar = () => {
     return <Link to={to} {...props}>{children}</Link>;
   };
 
+  const closeMobileMenu = () => {
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false);
+      document.body.style.overflow = 'auto';
+    }
+  };
+
   return (
     <>
       <nav 
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${
           scrolled 
-            ? "py-3 backdrop-blur-xl bg-cosmic-900/90 shadow-lg border-b border-white/5" 
-            : "py-5 bg-transparent"
+            ? "py-2 backdrop-blur-xl bg-cosmic-900/90 shadow-lg border-b border-white/5" 
+            : "py-3 md:py-5 bg-transparent"
         }`}
       >
         <div 
@@ -61,16 +70,17 @@ const PremiumNavbar = () => {
           style={{ width: `${scrollProgress}%` }}
         />
         
-        <div className="flex items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="flex items-center justify-between mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
           <Link 
             to="/" 
-            className="flex items-center gap-2 font-orbitron text-2xl font-bold transition-all duration-300 group"
+            className="flex items-center gap-1.5 md:gap-2 font-orbitron text-lg md:text-2xl font-bold transition-all duration-300 group"
+            onClick={closeMobileMenu}
           >
-            <div className="relative w-10 h-10 flex items-center justify-center">
+            <div className="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
               <div className="absolute inset-0 bg-gradient-to-r from-neon-pink to-neon-blue rounded-full opacity-20 group-hover:opacity-30 transition-opacity" />
               <Rocket 
                 strokeWidth={3} 
-                className="w-6 h-6 relative z-10 text-white group-hover:text-neon-pink transition-colors duration-300" 
+                className="w-5 h-5 md:w-6 md:h-6 relative z-10 text-white group-hover:text-neon-pink transition-colors duration-300" 
               />
             </div>
             <span className="bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent group-hover:from-neon-pink group-hover:to-neon-blue transition-all duration-300">
@@ -114,13 +124,24 @@ const PremiumNavbar = () => {
             </a>
           </div>
           
-          <button 
-            className="md:hidden p-2 text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-all"
-            onClick={toggleMobileMenu}
-            aria-label="Toggle mobile menu"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-3 md:hidden">
+            <a 
+              href="#vibe-store" 
+              className="p-2 rounded-lg text-white/80 hover:text-white"
+              aria-label="Shopping bag"
+              onClick={closeMobileMenu}
+            >
+              <ShoppingBag className="w-5 h-5" />
+            </a>
+            
+            <button 
+              className="p-2 text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-all"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </nav>
       
@@ -140,7 +161,7 @@ const PremiumNavbar = () => {
                       ? 'text-white bg-gradient-to-r from-neon-pink/20 to-neon-blue/20' 
                       : 'text-white/80 hover:text-white hover:bg-white/5'
                   }`}
-                  onClick={toggleMobileMenu}
+                  onClick={closeMobileMenu}
                 >
                   {label}
                 </NavLink>
@@ -152,7 +173,7 @@ const PremiumNavbar = () => {
             <a 
               href="#vibe-store" 
               className="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/5 text-white hover:bg-white/10 transition-all"
-              onClick={toggleMobileMenu}
+              onClick={closeMobileMenu}
             >
               <ShoppingBag className="w-5 h-5 text-neon-blue" />
               <span>Visit the store</span>
@@ -161,7 +182,7 @@ const PremiumNavbar = () => {
             <a 
               href="#join" 
               className="flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-gradient-to-r from-neon-pink to-neon-blue text-white font-bold hover:shadow-lg hover:shadow-neon-pink/20 transition-all"
-              onClick={toggleMobileMenu}
+              onClick={closeMobileMenu}
             >
               <User className="w-5 h-5" />
               <span>Become a Vibonaut</span>
