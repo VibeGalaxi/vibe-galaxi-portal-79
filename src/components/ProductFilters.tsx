@@ -1,5 +1,4 @@
-
-import { Category } from "lucide-react";
+import { Tags } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -39,7 +38,7 @@ const ProductFilters = ({
       <Card className="bg-white/5 border-white/10 backdrop-blur-sm shadow-xl">
         <CardHeader className="pb-4">
           <CardTitle className="text-lg text-white flex items-center gap-2">
-            <Category className="w-5 h-5" />
+            <Tags className="w-5 h-5" />
             Categories
           </CardTitle>
         </CardHeader>
