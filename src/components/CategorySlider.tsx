@@ -335,7 +335,7 @@ const CategorySlider = () => {
   return (
     <section 
       id="category-slider"
-      className="w-full py-32 px-4 md:px-8 relative overflow-hidden"
+      className="w-full py-32 relative overflow-hidden"
       style={{
         background: `linear-gradient(135deg, #1a0933 0%, #0d0620 100%)`,
         backgroundSize: "cover",
@@ -377,7 +377,7 @@ const CategorySlider = () => {
         }}
       />
       
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="w-full relative z-10">
         <div className="text-center mb-16">
           <h2 
             className={`font-orbitron text-center text-5xl md:text-6xl lg:text-7xl font-bold mb-4
@@ -399,7 +399,7 @@ const CategorySlider = () => {
           defaultValue="t-shirts" 
           value={activeTab}
           onValueChange={(value) => setActiveTab(value)}
-          className="w-full max-w-6xl mx-auto mb-20"
+          className="w-full mb-20"
         >
           <div className="relative">
             <div 
@@ -449,13 +449,13 @@ const CategorySlider = () => {
             <TabsContent 
               key={category.id}
               value={category.id}
-              className={`mt-12 transition-all duration-700 
+              className={`mt-12 transition-all duration-700 px-4 
                         ${activeTab === category.id 
                           ? 'opacity-100 transform translate-x-0' 
                           : 'absolute opacity-0 transform translate-x-20'}`}
             >
               <ScrollArea className="w-full pb-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-6">
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-4 pb-6">
                   {category.products.map((product, index) => (
                     <div 
                       key={product.id}
