@@ -53,21 +53,36 @@ const EnhancedHeroSection = () => {
       subtitle: "Embedded with quantum computing patterns, our most popular t-shirt design transforms your style into digital art.",
       image: "https://pythago.ai/bruh/assets/5.png",
       badge: "T-Shirts Collection",
-      features: ["Quantum-inspired design", "Premium fabric", "Digitally enhanced patterns"]
+      features: ["Quantum-inspired design", "Premium fabric", "Digitally enhanced patterns"],
+      price: "59.99",
+      rating: 4.9,
+      reviews: 128,
+      stock: "Limited Edition",
+      colors: ["Cosmic Black", "Neural Blue", "Quantum Purple"]
     },
     {
       title: "Nebulahood™ Classic",
       subtitle: "Our signature hoodie with glow-in-dark constellation patterns and hidden smart pockets.",
       image: "https://pythago.ai/bruh/assets/h1.png",
       badge: "Hoodies Collection",
-      features: ["Glow-in-dark constellations", "Hidden smart pockets", "Premium comfort"]
+      features: ["Glow-in-dark constellations", "Hidden smart pockets", "Premium comfort"],
+      price: "89.99",
+      rating: 4.8,
+      reviews: 96,
+      stock: "Selling Fast",
+      colors: ["Nebula Black", "Starlight Gray", "Aurora Green"]
     },
     {
       title: "Cosmic Brew Master",
       subtitle: "Temperature-sensitive constellation design reveals itself as you enjoy your favorite beverage.",
       image: "https://pythago.ai/bruh/assets/c1.png",
       badge: "Mugs Collection",
-      features: ["Temperature-sensitive design", "Premium ceramic", "Dishwasher safe"]
+      features: ["Temperature-sensitive design", "Premium ceramic", "Dishwasher safe"],
+      price: "29.99",
+      rating: 4.7,
+      reviews: 234,
+      stock: "In Stock",
+      colors: ["Celestial White", "Galaxy Black", "Cosmic Blue"]
     }
   ];
 
@@ -146,7 +161,7 @@ const EnhancedHeroSection = () => {
         <CarouselContent>
           {slides.map((slide, index) => (
             <CarouselItem key={index}>
-              <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen items-center gap-8 px-6 lg:px-16">
+              <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen items-center gap-8 px-6 lg:px-10">
                 <motion.div 
                   className="relative order-2 lg:order-1"
                   initial={{ opacity: 0, x: -50 }}
@@ -165,7 +180,7 @@ const EnhancedHeroSection = () => {
                 </motion.div>
 
                 <motion.div 
-                  className="order-1 lg:order-2 space-y-8"
+                  className="order-1 lg:order-2 space-y-8 px-6 lg:px-10"
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8 }}
@@ -189,11 +204,7 @@ const EnhancedHeroSection = () => {
                     className="font-orbitron text-4xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-tight"
                     variants={{
                       hidden: { opacity: 0, y: 20 },
-                      visible: { 
-                        opacity: 1, 
-                        y: 0,
-                        transition: { duration: 0.8, ease: "easeOut" }
-                      }
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
                     }}
                   >
                     <div className="relative">
@@ -206,15 +217,39 @@ const EnhancedHeroSection = () => {
                     className="text-xl lg:text-2xl text-white/90 max-w-xl leading-relaxed"
                     variants={{
                       hidden: { opacity: 0, y: 30 },
-                      visible: { 
-                        opacity: 1, 
-                        y: 0,
-                        transition: { duration: 0.8, delay: 0.3, ease: "easeOut" }
-                      }
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.3, ease: "easeOut" } }
                     }}
                   >
                     {slide.subtitle}
                   </motion.p>
+
+                  <div className="grid grid-cols-2 gap-4 my-6">
+                    <div className="glass-morphism p-4 rounded-xl">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Star className="text-yellow-400" size={20} />
+                        <span className="text-lg font-bold">{slide.rating}/5.0</span>
+                      </div>
+                      <p className="text-sm text-white/70">{slide.reviews} reviews</p>
+                    </div>
+                    <div className="glass-morphism p-4 rounded-xl">
+                      <div className="flex items-center gap-2 mb-2">
+                        <ShieldAlert className="text-emerald-400" size={20} />
+                        <span className="text-lg font-bold">{slide.stock}</span>
+                      </div>
+                      <p className="text-sm text-white/70">Availability Status</p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-white/90">Available Colors:</h3>
+                    <div className="flex gap-3">
+                      {slide.colors.map((color, idx) => (
+                        <div key={idx} className="glass-morphism px-4 py-2 rounded-full text-sm hover:bg-white/20 cursor-pointer transition-all">
+                          {color}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
 
                   <motion.div 
                     className="flex flex-col gap-3"
@@ -222,6 +257,7 @@ const EnhancedHeroSection = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
                   >
+                    <h3 className="text-lg font-semibold text-white/90">Key Features:</h3>
                     {slide.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center gap-2">
                         <div className="h-2 w-2 rounded-full bg-neon-pink" />
@@ -230,19 +266,25 @@ const EnhancedHeroSection = () => {
                     ))}
                   </motion.div>
 
-                  <motion.div 
-                    className="flex gap-4 pt-4"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.7 }}
-                  >
-                    <button className="premium-button">
-                      Explore Now
-                    </button>
-                    <button className="cosmic-button">
-                      Learn More
-                    </button>
-                  </motion.div>
+                  <div className="flex items-center gap-4 mt-8">
+                    <div className="glass-morphism px-6 py-3 rounded-xl">
+                      <span className="text-sm text-white/70">Price</span>
+                      <div className="text-2xl font-bold text-white">${slide.price}</div>
+                    </div>
+                    <motion.div 
+                      className="flex gap-4"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.7 }}
+                    >
+                      <button className="premium-button">
+                        Add to Cart
+                      </button>
+                      <button className="cosmic-button">
+                        Learn More
+                      </button>
+                    </motion.div>
+                  </div>
                 </motion.div>
               </div>
             </CarouselItem>
