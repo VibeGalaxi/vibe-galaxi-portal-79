@@ -1,208 +1,241 @@
 
-import React, { useEffect } from "react";
-import HeroSection from "../components/HeroSection";
-import CategorySlider from "../components/CategorySlider";
-import StorySection from "../components/StorySection";
-import ProductHighlight from "../components/ProductHighlight";
-import Footer from "../components/Footer";
-import PremiumNavbar from "../components/PremiumNavbar";
-import Leaderboard from "../components/Leaderboard";
-import TestimonialsCarousel from "../components/TestimonialsCarousel";
-import MemeWall from "../components/MemeWall";
-import FaqSection from "../components/FaqSection";
-import TimelineRoadmap from "../components/TimelineRoadmap";
-import PressSection from "../components/PressSection";
-import NewsletterSignup from "../components/NewsletterSignup";
-import CommunityWall from "../components/CommunityWall";
-import ContactSection from "../components/ContactSection";
-import ExclusiveDrops from "../components/ExclusiveDrops";
-import VibeBadges from "../components/VibeBadges";
-import VibeMemeGenerator from "../components/VibeMemeGenerator";
-import VibeWall from "../components/VibeWall";
-import CosmicCountdown from "../components/CosmicCountdown";
-import VibeClashArena from "../components/VibeClashArena";
-import VibeVerseStories from "../components/VibeVerseStories";
-import CosmicGiveaway from "../components/CosmicGiveaway";
+import { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+import PremiumNavbar from "@/components/PremiumNavbar";
+import EnhancedHeroSection from "@/components/EnhancedHeroSection";
+import ProductShowcase3D from "@/components/ProductShowcase3D";
+import ScrollTransition from "@/components/ScrollTransition";
+import StorySection from "@/components/StorySection";
+import CategorySlider from "@/components/CategorySlider";
+import HolographicFeatureCard from "@/components/HolographicFeatureCard";
+import CosmicCountdown from "@/components/CosmicCountdown";
+import VibeClashArena from "@/components/VibeClashArena";
+import CommunityWall from "@/components/CommunityWall";
+import VibeBadges from "@/components/VibeBadges";
+import TimelineRoadmap from "@/components/TimelineRoadmap";
+import FaqSection from "@/components/FaqSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
+import Leaderboard from "@/components/Leaderboard";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
+import { Smartphone, ShieldCheck, Zap, Star, PhoneCall, Rocket } from "lucide-react";
 
-const dripFeatures = (
-  <ul className="list-disc ml-8 text-white/90 space-y-2">
-    <li>Fiecare tricou include un cod QR pentru content exclusiv</li>
-    <li>Materiale premium și design absurd de comod</li>
-    <li>Meme-uri actualizate lunar prin NFC</li>
-  </ul>
-);
+// Component to handle reveal animations on scroll
+const RevealOnScroll = ({ children, delay = 0 }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const controls = useAnimation();
 
-const caffeiniaFeatures = (
-  <ul className="list-disc ml-8 text-white/90 space-y-2">
-    <li>Cănile schimbă culoarea când pui lichid fierbinte</li>
-    <li>Scanează codul AR pentru ritualul cafelei de dimineață</li>
-    <li>Materiale ecologice, vibe cosmică</li>
-  </ul>
-);
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [isInView, controls]);
 
-const nebulaFeatures = (
-  <ul className="list-disc ml-8 text-white/90 space-y-2">
-    <li>Strălucește în întuneric cu constelatii unice</li>
-    <li>Tag NFC cu mesaj personalizat de la AI</li>
-    <li>Buzunar ascuns pentru artefacte cosmice</li>
-  </ul>
-);
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={{
+        hidden: { opacity: 0, y: 30 },
+        visible: { 
+          opacity: 1, 
+          y: 0, 
+          transition: { 
+            duration: 0.6, 
+            ease: [0.22, 1, 0.36, 1],
+            delay 
+          }
+        }
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 const Index = () => {
+  // Initialize reveal elements
   useEffect(() => {
-    // Add smooth scrolling to anchor links
-    const handleAnchorClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      const anchor = target.closest('a');
-      
-      if (anchor && anchor.hash && anchor.hash.startsWith('#')) {
-        e.preventDefault();
-        
-        const targetElement = document.querySelector(anchor.hash);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.getBoundingClientRect().top + window.scrollY - 100,
-            behavior: 'smooth'
-          });
-          
-          // Update URL but don't scroll
-          history.pushState(null, '', anchor.hash);
-        }
-      }
-    };
-    
-    document.addEventListener('click', handleAnchorClick);
-    
-    // Add parallax scroll effect
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      document.documentElement.style.setProperty('--scroll', `${scrollTop}px`);
-      
-      const parallaxElements = document.querySelectorAll('.animate-parallax');
-      parallaxElements.forEach((element) => {
-        const speed = element.classList.contains('parallax-slow') ? 0.1 :
-                      element.classList.contains('parallax-medium') ? 0.2 : 0.3;
-                      
-        const yPos = -scrollTop * speed;
-        (element as HTMLElement).style.transform = `translateY(${yPos}px)`;
+      document.querySelectorAll('.reveal-element').forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        if (rect.top <= windowHeight * 0.85) {
+          element.classList.add('revealed');
+        }
       });
     };
     
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
     
     return () => {
-      document.removeEventListener('click', handleAnchorClick);
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
+  
   return (
-    <main className="bg-cosmic-900 min-h-screen font-montserrat">
+    <div className="bg-cosmic-900 min-h-screen overflow-x-hidden">
       <PremiumNavbar />
       
-      {/* First fold - Hero & Category */}
-      <HeroSection />
-      <div id="category-slider">
-        <CategorySlider />
-      </div>
+      {/* Enhanced Hero Section */}
+      <EnhancedHeroSection />
       
-      {/* Community & Features */}
-      <Leaderboard />
+      {/* Story Section */}
       <StorySection />
       
-      {/* Interactive Features */}
-      <VibeMemeGenerator />
-      <VibeWall />
+      {/* Transition */}
+      <ScrollTransition colorFrom="rgba(155, 135, 245, 0.6)" colorTo="rgba(217, 70, 239, 0.6)" />
       
-      {/* Limited Drops */}
-      <div id="drops">
-        <CosmicCountdown />
-        <ExclusiveDrops />
-      </div>
+      {/* 3D Product Showcase */}
+      <ProductShowcase3D />
       
-      {/* Contests & Social */}
+      {/* Categories */}
+      <CategorySlider />
+      
+      {/* Featured Vibe Tech - Holographic Cards */}
+      <section className="py-24 px-4 bg-gradient-to-br from-cosmic-800 via-cosmic-700 to-cosmic-900 relative overflow-hidden">
+        {/* Background elements */}
+        <div className="absolute inset-0 cosmic-grid opacity-10 pointer-events-none" />
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-neon-pink/10 blur-3xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-neon-blue/10 blur-3xl" />
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <RevealOnScroll>
+            <div className="text-center mb-16">
+              <div className="inline-block px-4 py-2 mb-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-neon-purple font-medium">
+                Integrated Technology
+              </div>
+              <h2 className="font-orbitron text-4xl md:text-6xl font-bold mb-4 text-gradient-animate">
+                VibeTech™ Features
+              </h2>
+              <p className="text-white/80 text-lg max-w-2xl mx-auto">
+                Our garments are powered by cutting-edge tech that connects physical and digital realms
+              </p>
+            </div>
+          </RevealOnScroll>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <RevealOnScroll delay={0.1}>
+              <HolographicFeatureCard
+                title="NFC Integration"
+                description="Every item comes with embedded NFC tags that unlock exclusive digital experiences and authenticity verification."
+                icon={<Smartphone className="w-6 h-6" />}
+                primaryColor="rgba(217, 70, 239, 1)"
+                secondaryColor="rgba(155, 135, 245, 1)"
+                imageUrl="https://pythago.ai/bruh/assets/t3.png"
+                hoverText="Connect"
+              />
+            </RevealOnScroll>
+            
+            <RevealOnScroll delay={0.2}>
+              <HolographicFeatureCard
+                title="AR Visualization"
+                description="Point your camera at your merch to see animated holograms, cosmic patterns and interactive visualizations."
+                icon={<PhoneCall className="w-6 h-6" />}
+                primaryColor="rgba(30, 174, 219, 1)"
+                secondaryColor="rgba(155, 135, 245, 1)"
+                imageUrl="https://pythago.ai/bruh/assets/h3.png"
+                hoverText="Visualize"
+              />
+            </RevealOnScroll>
+            
+            <RevealOnScroll delay={0.3}>
+              <HolographicFeatureCard
+                title="Reactive Materials"
+                description="Special fabrics that change color based on temperature, UV exposure or digital triggers from the VibeMerch app."
+                icon={<Zap className="w-6 h-6" />}
+                primaryColor="rgba(155, 135, 245, 1)"
+                secondaryColor="rgba(30, 174, 219, 1)"
+                imageUrl="https://pythago.ai/bruh/assets/monkeyt4.png"
+                hoverText="Transform"
+              />
+            </RevealOnScroll>
+          </div>
+          
+          <RevealOnScroll delay={0.4}>
+            <div className="mt-16 text-center">
+              <button className="cosmic-button group">
+                <span className="flex items-center gap-2">
+                  View Technical Specifications
+                  <ShieldCheck className="w-5 h-5 transform group-hover:rotate-12 transition-transform" />
+                </span>
+              </button>
+            </div>
+          </RevealOnScroll>
+        </div>
+      </section>
+      
+      {/* Transition */}
+      <ScrollTransition colorFrom="rgba(30, 174, 219, 0.6)" colorTo="rgba(217, 70, 239, 0.6)" />
+      
+      {/* Countdown */}
+      <CosmicCountdown />
+      
+      {/* Vibe Clash Arena */}
       <VibeClashArena />
-      <VibeVerseStories />
+
+      {/* Community Wall */}
+      <CommunityWall />
       
-      {/* Premium Products */}
-      <div id="products">
-        <ProductHighlight
-          headline="The AI That Predicts Your Vibe."
-          subhead="The VibeOracle™ is an artificial intelligence that scans the universe for the freshest memes, trends, and prophecies. Every product comes with a unique AI-generated message."
-          features={
-            <ul className="list-disc ml-8 text-white/90 space-y-2">
-              <li>Demo: Tap your hoodie's NFC tag → Hear your personalized vibe prophecy.</li>
-              <li>New prophecies monthly via quantum algorithm updates.</li>
-              <li>Integrates with your personal meme history for accurate predictions.</li>
-            </ul>
-          }
-          imageUrl="/photo-1487058792275-0ad4aaf24ca7"
-          bgFrom="#21063E"
-          bgTo="#D946EF"
-          highlightColor="#9b87f5"
-        />
-        <ProductHighlight
-          headline="Wear the Meme. Live the Lore."
-          subhead="Planet Drip – meme T-shirts with a soul. Each tee unlocks exclusive drip and meme lore in the VibeGalaxi universe."
-          features={dripFeatures}
-          imageUrl="/photo-1470813740244-df37b8c1edcb"
-          bgFrom="#1A1F2C"
-          bgTo="#8B5CF6"
-          reverse
-          highlightColor="#D946EF"
-        />
-        <ProductHighlight
-          headline="Your Morning Brew Is a Cosmic Ritual."
-          subhead="From color-changing mugs to AR coffee spirits, Caffeinia powers your days in VibeGalaxi with premium energy vibes."
-          features={caffeiniaFeatures}
-          imageUrl="/photo-1500673922987-e212871fec22"
-          bgFrom="#21063E"
-          bgTo="#1EAEDB"
-          highlightColor="#D946EF"
-        />
-        <ProductHighlight
-          headline="Your Hoodie Is a Portal."
-          subhead="Nebulahood™ hoodies: AR unboxing, hidden memes, and glow-in-the-dark constellations form a gateway to new dimensions."
-          features={nebulaFeatures}
-          imageUrl="/photo-1526374965328-7f61d4dc18c5"
-          bgFrom="#1A1F2C"
-          bgTo="#9b87f5"
-          reverse
-          highlightColor="#1EAEDB"
-        />
-      </div>
+      {/* Vibe Badges */}
+      <VibeBadges />
       
-      {/* Badges & Community */}
-      <div id="badges">
-        <VibeBadges />
-      </div>
+      {/* Transition */}
+      <ScrollTransition colorFrom="rgba(155, 135, 245, 0.6)" colorTo="rgba(30, 174, 219, 0.6)" />
       
-      {/* Engagement Sections */}
-      <CosmicGiveaway />
+      {/* Roadmap Timeline */}
+      <TimelineRoadmap />
+      
+      {/* Testimonials */}
       <TestimonialsCarousel />
-      {/* Removed VirtualTryOn component */}
-      <MemeWall />
+
+      {/* Leaderboard */}
+      <Leaderboard />
       
-      {/* Information Sections */}
-      <div id="roadmap">
-        <TimelineRoadmap />
-      </div>
-      <PressSection />
+      {/* FAQ */}
       <FaqSection />
+      
+      {/* Newsletter Signup */}
       <NewsletterSignup />
       
-      {/* Community and Contact */}
-      <div id="comunitate">
-        <CommunityWall />
-      </div>
-      <div id="contact">
-        <ContactSection />
+      {/* Contact */}
+      <ContactSection />
+      
+      {/* Footer */}
+      <Footer />
+      
+      {/* Floating Action Button - Back to top */}
+      <div className="fixed bottom-6 right-6 z-50 opacity-0 transition-opacity duration-300" id="back-to-top">
+        <button 
+          className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-neon-pink to-neon-blue text-white shadow-neon hover:shadow-neon-strong transition-all hover:scale-110"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          aria-label="Back to top"
+        >
+          <Rocket className="w-6 h-6" />
+        </button>
       </div>
       
-      <Footer />
-    </main>
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          window.addEventListener('scroll', function() {
+            var scrollButton = document.getElementById('back-to-top');
+            if (window.scrollY > 500) {
+              scrollButton.style.opacity = '1';
+            } else {
+              scrollButton.style.opacity = '0';
+            }
+          });
+        `
+      }} />
+    </div>
   );
 };
 
 export default Index;
-

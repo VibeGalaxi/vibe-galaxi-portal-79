@@ -1,116 +1,83 @@
 
-import type { Config } from "tailwindcss";
+import { type Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-  ],
-  prefix: "",
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+	],
   theme: {
     container: {
       center: true,
-      padding: '2rem',
+      padding: "2rem",
       screens: {
-        'sm': '640px',
-        'md': '768px',
-        'lg': '1024px',
-        'xl': '1280px',
-        '2xl': '1536px',
-      }
+        "2xl": "1400px",
+      },
     },
     extend: {
-      fontFamily: {
-        'orbitron': ["'Orbitron'", 'sans-serif'],
-        'montserrat': ["'Montserrat'", 'sans-serif'],
-      },
       colors: {
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        primary: {
-          DEFAULT: '#9b87f5',
-          foreground: '#21063e',
-        },
-        cosmic: {
-          '900': 'rgb(var(--cosmic-black))',
-          '800': 'rgb(var(--cosmic-purple))',
-        },
-        neon: {
-          DEFAULT: '#1EAEDB',
-          'pink': 'rgb(var(--neon-pink))',
-          'blue': 'rgb(var(--neon-blue))',
-          'purple': 'rgb(var(--cosmic-lavender))',
-        },
-        accent: {
-          DEFAULT: '#D946EF',
-        },
-        magenta: '#D946EF',
-        drip: '#8B5CF6',
-        pink: '#F97316',
-        'star-bg': '#221F26',
+        "cosmic-900": "var(--cosmic-900)",
+        "cosmic-800": "var(--cosmic-800)",
+        "cosmic-700": "var(--cosmic-700)",
+        "neon-pink": "var(--neon-pink)",
+        "neon-purple": "var(--neon-purple)",
+        "neon-blue": "var(--neon-blue)",
       },
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)'
+      backgroundImage: {
+        'cosmic-gradient': 'linear-gradient(135deg, var(--cosmic-900) 0%, var(--cosmic-800) 100%)',
+        'neon-gradient': 'linear-gradient(90deg, var(--neon-pink) 0%, var(--neon-blue) 100%)',
+        'purple-gradient': 'linear-gradient(90deg, var(--neon-purple) 0%, var(--neon-blue) 100%)',
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        levitate: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+        'pulse-glow': {
+          '0%, 100%': { 
+            boxShadow: '0 0 5px rgba(217, 70, 239, 0.7), 0 0 20px rgba(30, 174, 219, 0.5)'
+          },
+          '50%': { 
+            boxShadow: '0 0 25px rgba(217, 70, 239, 0.9), 0 0 40px rgba(30, 174, 219, 0.7)'
+          },
+        },
+        'text-flicker': {
+          '0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': { opacity: '0.99', filter: 'drop-shadow(0 0 1px rgba(155, 135, 245, 0.95))' },
+          '20%, 21.999%, 63%, 63.999%, 65%, 69.999%': { opacity: '0.5', filter: 'drop-shadow(0 0 5px rgba(155, 135, 245, 0.95))' },
+        }
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        'levitate': 'levitate 5s ease-in-out infinite',
+        'shimmer': 'shimmer 3s linear infinite',
+        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+        'text-flicker': 'text-flicker 3s linear infinite',
+      },
+      boxShadow: {
+        'neon': '0 0 5px rgba(217, 70, 239, 0.7), 0 0 20px rgba(30, 174, 219, 0.5)',
+        'neon-strong': '0 0 10px rgba(217, 70, 239, 0.7), 0 0 30px rgba(30, 174, 219, 0.7), 0 0 50px rgba(30, 174, 219, 0.3)',
+        'neon-inner': 'inset 0 0 15px rgba(217, 70, 239, 0.5)',
       },
       backdropBlur: {
         xs: '2px',
       },
-      keyframes: {
-        'pulse-neon': {
-          '0%, 100%': { boxShadow: '0 0 20px 8px rgba(217, 70, 239, 0.4)' },
-          '50%': { boxShadow: '0 0 40px 20px rgba(155, 135, 245, 0.3)' },
-        },
-        'float': {
-          '0%,100%': { transform: 'translateY(0) rotate(0deg)' },
-          '25%': { transform: 'translateY(-12px) rotate(1deg)' },
-          '50%': { transform: 'translateY(0) rotate(0deg)' },
-          '75%': { transform: 'translateY(12px) rotate(-1deg)' }
-        },
-        'scanning-progress': {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(0)' }
-        },
-        'twinkle': {
-          '0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
-          '50%': { opacity: '1', transform: 'scale(1.3)' }
-        },
-        'fade-in': {
-          '0%': { opacity: '0', transform: 'translateY(10px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' }
-        },
-        'slide-in': {
-          '0%': { opacity: '0', transform: 'translateY(30px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' }
-        },
-        'rotate-orbit': {
-          '0%': { transform: 'rotate(0deg) translateX(50px) rotate(0deg)' },
-          '100%': { transform: 'rotate(360deg) translateX(50px) rotate(-360deg)' }
-        }
-      },
-      animation: {
-        'pulse-neon': 'pulse-neon 3s infinite ease-in-out',
-        'float': 'float 6s infinite ease-in-out',
-        'fade-in': 'fade-in 0.8s forwards ease-out',
-        'slide-in': 'slide-in 0.8s forwards ease-out',
-        'scanning-progress': 'scanning-progress 1.5s infinite ease-in-out',
-        'twinkle': 'twinkle 3s infinite ease-in-out',
-        'rotate-orbit': 'rotate-orbit 12s infinite linear'
-      },
-      backgroundImage: {
-        'hero-stars': "url('/photo-1470813740244-df37b8c1edcb')",
-        'galaxy': "url('/photo-1462331940025-496dfbfc7564')",
-        'cosmos': "url('/photo-1465101162946-4377e57745c3')",
-        'glitch': "linear-gradient(90deg, #9b87f5 0%, #1EAEDB 60%, #D946EF 100%)",
-      }
-    }
+    },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
