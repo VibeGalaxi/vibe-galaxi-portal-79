@@ -1,4 +1,5 @@
 
+import React, { useEffect } from "react";
 import HeroSection from "../components/HeroSection";
 import CategorySlider from "../components/CategorySlider";
 import StorySection from "../components/StorySection";
@@ -14,7 +15,6 @@ import PressSection from "../components/PressSection";
 import NewsletterSignup from "../components/NewsletterSignup";
 import CommunityWall from "../components/CommunityWall";
 import ContactSection from "../components/ContactSection";
-import VirtualTryOn from "../components/VirtualTryOn";
 import ExclusiveDrops from "../components/ExclusiveDrops";
 import VibeBadges from "../components/VibeBadges";
 import VibeMemeGenerator from "../components/VibeMemeGenerator";
@@ -23,7 +23,6 @@ import CosmicCountdown from "../components/CosmicCountdown";
 import VibeClashArena from "../components/VibeClashArena";
 import VibeVerseStories from "../components/VibeVerseStories";
 import CosmicGiveaway from "../components/CosmicGiveaway";
-import { useEffect } from "react";
 
 const dripFeatures = (
   <ul className="list-disc ml-8 text-white/90 space-y-2">
@@ -181,7 +180,7 @@ const Index = () => {
       {/* Engagement Sections */}
       <CosmicGiveaway />
       <TestimonialsCarousel />
-      <VirtualTryOn />
+      {/* Removed VirtualTryOn component */}
       <MemeWall />
       
       {/* Information Sections */}
@@ -206,3 +205,4 @@ const Index = () => {
 };
 
 export default Index;
+
