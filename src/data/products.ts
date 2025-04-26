@@ -131,7 +131,7 @@ export const categories = [
         id: 1,
         name: "Nebulahood™ Classic",
         description: "Glow-in-dark constellation patterns with hidden pockets",
-        image: "https://pythago.ai/bruh/assets/lammahodie2.png",
+        image: "https://pythago.ai/bruh/assets/h1.png",
         badge: "NFC-enabled",
         limitedEdition: true
       },
@@ -139,7 +139,7 @@ export const categories = [
         id: 2,
         name: "Quantum Windbreaker",
         description: "Exists in multiple dimensions simultaneously",
-        image: "/photo-1500673922987-e212871fec22",
+        image: "https://pythago.ai/bruh/assets/h2.png",
         badge: "Weather-proof",
         limitedEdition: false
       },
@@ -147,9 +147,25 @@ export const categories = [
         id: 3,
         name: "Astral Denim",
         description: "Embroidered with actual star maps and constellations",
-        image: "/photo-1487058792275-0ad4aaf24ca7",
+        image: "https://pythago.ai/bruh/assets/h3.png",
         badge: "Star-mapped",
         limitedEdition: true
+      },
+      {
+        id: 4,
+        name: "Cosmic Pullover",
+        description: "Digital art patterns that change with your mood",
+        image: "https://pythago.ai/bruh/assets/h4.png",
+        badge: "Dynamic-art",
+        limitedEdition: true
+      },
+      {
+        id: 5,
+        name: "Nebula Zip-up",
+        description: "Embedded with holographic star patterns",
+        image: "https://pythago.ai/bruh/assets/h5.png",
+        badge: "Holographic",
+        limitedEdition: false
       }
     ]
   },
