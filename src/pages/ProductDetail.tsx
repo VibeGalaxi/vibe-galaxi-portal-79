@@ -1,4 +1,3 @@
-
 import { useParams, Link } from "react-router-dom";
 import { categories } from "@/data/products";
 import { Star, ArrowLeft, ShoppingBag, Heart, Share, Info, Check } from "lucide-react";
@@ -13,7 +12,7 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
 
   const category = categories.find(cat => cat.id === categoryId);
-  const product = category?.products.find(p => p.id === Number(productId));
+  const product = category?.products.find(p => p.id === productId);
 
   if (!product) {
     return <div>Produs negăsit</div>;
