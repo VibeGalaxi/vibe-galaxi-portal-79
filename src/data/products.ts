@@ -78,6 +78,14 @@ export const categories = [
         image: "https://pythago.ai/bruh/assets/9.png",
         badge: "AI-evolving",
         limitedEdition: true
+      },
+      {
+        id: 10,
+        name: "Astral Monkey",
+        description: "Limited edition cosmic primate with holographic effect",
+        image: "https://pythago.ai/bruh/assets/monkeyt4.png",
+        badge: "Holographic",
+        limitedEdition: true
       }
     ]
   },
