@@ -5,13 +5,20 @@ import { Share2, BookX } from "lucide-react";
 const VibeMemeGenerator = () => {
   const [generating, setGenerating] = useState(false);
   const [memeUrl, setMemeUrl] = useState("");
+  const [imageIndex, setImageIndex] = useState(0);
+
+  const memeImages = [
+    "https://pythago.ai/bruh/assets/monkey2.png",
+    "https://pythago.ai/bruh/assets/monkey1.png"
+  ];
 
   const handleGenerate = (e: React.FormEvent) => {
     e.preventDefault();
     setGenerating(true);
-    // Simulate generation
+    // Simulate generation and alternate between images
     setTimeout(() => {
-      setMemeUrl("/photo-1579546929518-9e396f3cc809");
+      setMemeUrl(memeImages[imageIndex]);
+      setImageIndex((prevIndex) => (prevIndex + 1) % memeImages.length);
       setGenerating(false);
     }, 2000);
   };
