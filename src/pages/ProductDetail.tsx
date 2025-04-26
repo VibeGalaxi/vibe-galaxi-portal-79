@@ -7,6 +7,7 @@ import { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
 import TeeNomics from "@/components/TeeNomics";
 import Roadmap from "@/components/Roadmap";
+import { Link } from "react-router-dom";
 
 const ProductDetail = () => {
   const { categoryId, productId } = useParams();
