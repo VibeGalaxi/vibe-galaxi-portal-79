@@ -2,11 +2,11 @@
 import React from 'react';
 import EnhancedHeroSection from '@/components/EnhancedHeroSection';
 import CategorySlider from '@/components/CategorySlider';
+// Removed TeeNomics import
 import ExclusiveDrops from '@/components/ExclusiveDrops';
 import CosmicCountdown from '@/components/CosmicCountdown';
 import CommunityWall from '@/components/CommunityWall';
 import Leaderboard from '@/components/Leaderboard';
-import TeeNomics from '@/components/TeeNomics';
 import FaqSection from '@/components/FaqSection';
 import CosmicGiveaway from '@/components/CosmicGiveaway';
 import ContactSection from '@/components/ContactSection';
@@ -17,7 +17,7 @@ const Index = () => {
     <div className="bg-[#0d0620] overflow-x-hidden">
       <EnhancedHeroSection />
       <CategorySlider />
-      <TeeNomics />
+      {/* Removed TeeNomics component */}
       <ExclusiveDrops />
       <CosmicCountdown />
       <CommunityWall />
