@@ -1,8 +1,8 @@
 
 import React from 'react';
+import PremiumNavbar from '@/components/PremiumNavbar';
 import EnhancedHeroSection from '@/components/EnhancedHeroSection';
 import CategorySlider from '@/components/CategorySlider';
-// Removed TeeNomics import
 import ExclusiveDrops from '@/components/ExclusiveDrops';
 import CosmicCountdown from '@/components/CosmicCountdown';
 import CommunityWall from '@/components/CommunityWall';
@@ -15,9 +15,9 @@ import Footer from '@/components/Footer';
 const Index = () => {
   return (
     <div className="bg-[#0d0620] overflow-x-hidden">
+      <PremiumNavbar />
       <EnhancedHeroSection />
       <CategorySlider />
-      {/* Removed TeeNomics component */}
       <ExclusiveDrops />
       <CosmicCountdown />
       <CommunityWall />
