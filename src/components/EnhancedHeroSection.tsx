@@ -173,7 +173,7 @@ const EnhancedHeroSection = () => {
                     <img 
                       src={slide.image} 
                       alt={slide.title}
-                      className="relative z-10 w-full h-full object-contain lg:object-cover rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
+                      className="relative z-10 w-full h-full object-cover rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute -inset-1 bg-gradient-to-r from-neon-pink to-neon-blue opacity-30 blur-sm rounded-3xl" />
                   </div>
