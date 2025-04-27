@@ -1,4 +1,3 @@
-
 import { Link, useLocation } from "react-router-dom";
 import { Rocket, User, ShoppingBag, Menu, X, Star, ArrowUpRight } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -70,7 +69,7 @@ const PremiumNavbar = () => {
           style={{ width: `${scrollProgress}%` }}
         />
         
-        <div className="flex items-center justify-between mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
+        <div className="flex items-center justify-between w-full px-4 sm:px-6 lg:px-8 relative">
           <Link 
             to="/" 
             className="flex items-center gap-1.5 md:gap-2 font-orbitron text-lg md:text-2xl font-bold transition-all duration-300 group"
